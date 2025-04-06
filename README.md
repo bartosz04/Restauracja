@@ -17,7 +17,8 @@ Opinie klientów: Możliwość dodawania i przeglądania opinii gości.
 
 Kontakt: Formularz kontaktowy oraz dane kontaktowe.
 
-Technologie
+**Technologie:**
+
 C# – Główny język programowania.
 
 ASP.NET Core – Framework do tworzenia aplikacji webowych.
