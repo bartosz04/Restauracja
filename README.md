@@ -1,8 +1,8 @@
 **Restauracja- Aplikacja**
-**Opis projektu**
+📌 Opis projektu
 Aplikacja dla restauracji , która umożliwia użytkownikom zapoznanie się z menu, rezerwowanie stolików, sprawdzanie lokalizacji oraz kontaktowanie się z obsługą. Strona została stworzona przy użyciu technologii C# oraz frameworka ASP.NET Core.
 
-**Funkcjonalności**
+⚙️ Funkcjonalności
 Strona główna: Prezentacja restauracji, historia, filozofia kulinarna.
 
 Menu: Przegląd dostępnych dań z opcją filtrowania (przystawki, dania główne, desery, napoje).
@@ -17,7 +17,7 @@ Opinie klientów: Możliwość dodawania i przeglądania opinii gości.
 
 Kontakt: Formularz kontaktowy oraz dane kontaktowe.
 
-**Technologie:**
+🛠️ Technologie
 
 C# – Główny język programowania.
 
