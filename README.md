@@ -1,31 +1,54 @@
-**Restauracja- Aplikacja**
+**Restauracja_Biss - Aplikacja**
 📌 Opis projektu
 
-Aplikacja dla restauracji , która umożliwia użytkownikom zapoznanie się z menu, rezerwowanie stolików, sprawdzanie lokalizacji oraz kontaktowanie się z obsługą. Strona została stworzona przy użyciu technologii C# oraz frameworka ASP.NET Core.
+Aplikacja dla personelu restauracji stworzona w technologii .NET 8, która umożliwia zarządzanie zamówieniami i rezerwacjami klientów. Celem aplikacji jest uproszczenie procesów związanych z obsługą klientów, zwiększenie efektywności pracy personelu oraz poprawa jakości usług w restauracji.
+
+
+Spis treści
+
+- Funkcjonalności
+- Wymagania
+- Instalacja
+- Użycie
+- Struktura projektu
+- Przykłady użycia
+- Współpraca
+- Licencja
+- Kontakt
 
 ⚙️ Funkcjonalności
 
-Strona główna: Prezentacja restauracji, historia, filozofia kulinarna.
+Zarządzanie rezerwacjami: Pracownicy mogą dodawać, edytować i usuwać rezerwacje, a także przeglądać dostępność stolików w czasie rzeczywistym.
 
-Menu: Przegląd dostępnych dań z opcją filtrowania (przystawki, dania główne, desery, napoje).
+Zarządzanie zamówieniami: Możliwość dodawania, edytowania i śledzenia statusu zamówień klientów.
 
-Rezerwacja: Formularz do rezerwacji stolika online.
+Bezpieczny system logowania: Tylko uprawniony personel ma dostęp do aplikacji, co zapewnia bezpieczeństwo danych.
 
-Lokalizacja: Mapa lokalizacji restauracji, dane kontaktowe.
-
-Aktualności: Sekcja z informacjami o wydarzeniach i promocjach.
-
-Opinie klientów: Możliwość dodawania i przeglądania opinii gości.
-
-Kontakt: Formularz kontaktowy oraz dane kontaktowe.
-
-🛠️ Technologie
+Interfejs użytkownika: Przyjazny i intuicyjny interfejs, który ułatwia nawigację i obsługę aplikacji.
 
 
-C# – Główny język programowania.
+🛠️ Wymagania
 
-ASP.NET Core – Framework do tworzenia aplikacji webowych.
+.NET 8 SDK
 
-Entity Framework Core – ORM do pracy z bazą danych.
+Visual Studio 2022 lub nowszy (opcjonalnie, ale zalecane dla łatwiejszego rozwoju)
 
-SQL Server / SQLite – Baza danych.
+System operacyjny: Windows 10 lub nowszy
+
+Instalacja
+git clone <https://github.com/bartosz04/Restauracja>
+cd <Restauracja_Biss>
+dotnet restore
+dotnet run
+
+Użycie
+
+Logowanie: Po uruchomieniu aplikacji, wprowadź swoje dane logowania (nazwa użytkownika i hasło).
+
+Zarządzanie rezerwacjami: W sekcji rezerweacji dodaj nową rezerwację do danego stolika.
+
+Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
+
+Struktura projektu
+
+<Tutaj bedzie struktura projektu>
