@@ -13,7 +13,6 @@ Spis treści
 - Struktura projektu
 - Przykłady użycia
 - Współpraca
-- Licencja
 - Kontakt
 
 ⚙️ Funkcjonalności
@@ -54,3 +53,6 @@ Logowanie:
 Struktura projektu
 
 -Tutaj bedzie struktura projektu
+
+Kontakt
+- reSSBisSupport@gmail.com
