@@ -1,4 +1,5 @@
 **Restauracja_Biss - Aplikacja**
+
 📌 Opis projektu
 
 Aplikacja dla personelu restauracji stworzona w technologii .NET 8, która umożliwia zarządzanie zamówieniami i rezerwacjami klientów. Celem aplikacji jest uproszczenie procesów związanych z obsługą klientów, zwiększenie efektywności pracy personelu oraz poprawa jakości usług w restauracji.
