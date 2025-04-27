@@ -18,37 +18,39 @@ Spis treści
 
 ⚙️ Funkcjonalności
 
-Zarządzanie rezerwacjami: Pracownicy mogą dodawać, edytować i usuwać rezerwacje, a także przeglądać dostępność stolików w czasie rzeczywistym.
+- Zarządzanie rezerwacjami: Pracownicy mogą dodawać, edytować i usuwać rezerwacje, a także przeglądać dostępność stolików w czasie rzeczywistym.
 
-Zarządzanie zamówieniami: Możliwość dodawania, edytowania i śledzenia statusu zamówień klientów.
+- Zarządzanie zamówieniami: Możliwość dodawania, edytowania i śledzenia statusu zamówień klientów.
 
-Bezpieczny system logowania: Tylko uprawniony personel ma dostęp do aplikacji, co zapewnia bezpieczeństwo danych.
+- Bezpieczny system logowania: Tylko uprawniony personel ma dostęp do aplikacji, co zapewnia bezpieczeństwo danych.
 
-Interfejs użytkownika: Przyjazny i intuicyjny interfejs, który ułatwia nawigację i obsługę aplikacji.
+- Interfejs użytkownika: Przyjazny i intuicyjny interfejs, który ułatwia nawigację i obsługę aplikacji.
 
 
 🛠️ Wymagania
 
-.NET 8 SDK
+- .NET 8 SDK
 
-Visual Studio 2022 lub nowszy (opcjonalnie, ale zalecane dla łatwiejszego rozwoju)
+- Visual Studio 2022 lub nowszy (opcjonalnie, ale zalecane dla łatwiejszego rozwoju)
 
-System operacyjny: Windows 10 lub nowszy
+- System operacyjny: Windows 10 lub nowszy
 
 Instalacja
-git clone <https://github.com/bartosz04/Restauracja>
-cd <Restauracja_Biss>
-dotnet restore
-dotnet run
+- git clone <https://github.com/bartosz04/Restauracja>
+- cd <Restauracja_Biss>
+- dotnet restore
+- dotnet run
 
 Użycie
 
-Logowanie: Po uruchomieniu aplikacji, wprowadź swoje dane logowania (nazwa użytkownika i hasło).
+Logowanie: 
 
-Zarządzanie rezerwacjami: W sekcji rezerweacji dodaj nową rezerwację do danego stolika.
+- Po uruchomieniu aplikacji, wprowadź swoje dane logowania (nazwa użytkownika i hasło).
 
-Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
+- Zarządzanie rezerwacjami: W sekcji rezerweacji dodaj nową rezerwację do danego stolika.
+
+- Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
 
 Struktura projektu
 
-<Tutaj bedzie struktura projektu>
+-Tutaj bedzie struktura projektu
