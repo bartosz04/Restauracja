@@ -1,0 +1,15 @@
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\bin\Debug\net8.0-windows\StolikiApp.exe
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\bin\Debug\net8.0-windows\StolikiApp.deps.json
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\bin\Debug\net8.0-windows\StolikiApp.runtimeconfig.json
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\bin\Debug\net8.0-windows\StolikiApp.dll
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\bin\Debug\net8.0-windows\StolikiApp.pdb
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.AssemblyInfoInputs.cache
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.AssemblyInfo.cs
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.csproj.CoreCompileInputs.cache
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.sourcelink.json
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.dll
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\refint\StolikiApp.dll
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.pdb
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\StolikiApp.genruntimeconfig.cache
+C:\Users\dlleo\source\repos\bartosz04\Restauracja\StolikiApp\obj\Debug\net8.0-windows\ref\StolikiApp.dll
