@@ -34,6 +34,7 @@
             label1 = new Label();
             buttonSearch = new Button();
             dataGridViewResults = new DataGridView();
+            buttonChange = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
             SuspendLayout();
             // 
@@ -100,11 +101,22 @@
             dataGridViewResults.TabIndex = 6;
             dataGridViewResults.CellContentClick += dataGridViewResults_CellContentClick;
             // 
+            // buttonChange
+            // 
+            buttonChange.Font = new Font("DejaVu Serif Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            buttonChange.Location = new Point(712, 26);
+            buttonChange.Name = "buttonChange";
+            buttonChange.Size = new Size(186, 71);
+            buttonChange.TabIndex = 7;
+            buttonChange.Text = "Zmien Status";
+            buttonChange.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 552);
+            Controls.Add(buttonChange);
             Controls.Add(dataGridViewResults);
             Controls.Add(buttonSearch);
             Controls.Add(label1);
@@ -113,6 +125,7 @@
             Controls.Add(Label);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -126,5 +139,6 @@
         private Label label1;
         private Button buttonSearch;
         private DataGridView dataGridViewResults;
+        private Button buttonChange;
     }
 }
