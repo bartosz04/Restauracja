@@ -12,7 +12,8 @@ namespace Restauracja_Stoly
         public Form1()
         {
             InitializeComponent();
-            buttonSearch.Click += buttonSearch_Click; 
+            buttonSearch.Click += buttonSearch_Click;
+            buttonChange.Click += buttonChange_Click; 
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -21,6 +22,13 @@ namespace Restauracja_Stoly
             bool isReserved = checkBoxReserved.Checked; // Check if the checkbox is checked
             List<RestaurantTable> results = SearchTables(nameSearchTerm, isReserved); // Call the search method
             DisplayResults(results); // Display the results in the DataGridView
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(); // Create an instance of Form2
+            form2.Show(); // Show Form2
+            this.Hide(); // Optionally hide Form1
         }
 
         private List<RestaurantTable> SearchTables(string nameSearchTerm, bool isReserved)
@@ -82,7 +90,7 @@ namespace Restauracja_Stoly
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,6 +99,11 @@ namespace Restauracja_Stoly
         }
 
         private void dataGridViewResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
