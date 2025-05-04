@@ -47,6 +47,8 @@ Logowanie:
 
 - Po uruchomieniu aplikacji, wprowadź swoje dane logowania (nazwa użytkownika i hasło).
 
+- Hasła użytkowników są hashowane i saltowane przed zapisaniem w bazie danych, co zapewnia dodatkowy poziom bezpieczeństwa danych logowania.
+
 - Zarządzanie rezerwacjami: W sekcji rezerweacji dodaj nową rezerwację do danego stolika.
 
 - Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
