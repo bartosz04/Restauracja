@@ -20,7 +20,8 @@ namespace Restauracja_Stoly
         {
             string nameSearchTerm = textBoxName.Text; // Get the search term from the TextBox
             bool isReserved = checkBoxReserved.Checked; // Check if the checkbox is checked
-            List<RestaurantTable> results = SearchTables(nameSearchTerm, isReserved); // Call the search method
+            bool isEmpty = checkBoxEmpty.Checked; // Check if the checkbox is checked
+            List<RestaurantTable> results = SearchTables(nameSearchTerm, isReserved , isEmpty); // Call the search method
             DisplayResults(results); // Display the results in the DataGridView
         }
 
@@ -31,7 +32,7 @@ namespace Restauracja_Stoly
             this.Hide(); // Optionally hide Form1
         }
 
-        private List<RestaurantTable> SearchTables(string nameSearchTerm, bool isReserved)
+        private List<RestaurantTable> SearchTables(string nameSearchTerm, bool isReserved, bool isEmpty)
         {
             List<RestaurantTable> tables = new List<RestaurantTable>();
             string connectionString = $"Data Source={databaseFilePath};Version=3;";
@@ -44,14 +45,28 @@ namespace Restauracja_Stoly
                     string selectQuery = "SELECT * FROM tables WHERE handler LIKE @nameSearchTerm";
 
                     // Adjust the query based on the checkbox state
-                    if (isReserved)
+
+                    if (isReserved && isEmpty)
                     {
-                        selectQuery += " AND status = 'reserved'"; // Search for reserved tables
+                        MessageBox.Show("Please select only one option.");
                     }
                     else
                     {
-                        selectQuery += " AND (status = 'available' OR status IS NULL)"; // Search for available tables or those with NULL status
+                        if (isReserved)
+                        {
+                            selectQuery += " AND status = 'reserved'"; // Search for reserved tables
+                        }
+                        else if(isEmpty)
+                        {
+                            selectQuery += " AND status = 'available'"; // Search for available tables  
+                        }
+                        else
+                        {
+                            selectQuery += " AND (status = 'available' OR status = 'reserved')"; // Search for all tables
+                        } 
                     }
+                    
+                   
 
                     using (SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn))
                     {
@@ -95,7 +110,7 @@ namespace Restauracja_Stoly
 
         private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Label clicked!"); // Example action
+            
         }
 
         private void dataGridViewResults_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +122,13 @@ namespace Restauracja_Stoly
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 
     public class RestaurantTable
