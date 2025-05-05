@@ -45,7 +45,9 @@ namespace Restauracja_Stoly
                     string selectQuery = "SELECT * FROM tables WHERE handler LIKE @nameSearchTerm";
 
                     // Adjust the query based on the checkbox state
-
+                    
+                    
+                    
                     if (isReserved && isEmpty)
                     {
                         MessageBox.Show("Please select only one option.");
@@ -64,31 +66,35 @@ namespace Restauracja_Stoly
                         {
                             selectQuery += " AND (status = 'available' OR status = 'reserved')"; // Search for all tables
                         } 
-                    }
-                    
-                   
-
-                    using (SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@nameSearchTerm", "%" + nameSearchTerm + "%");
-                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        
+                        using (SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn))
                         {
-                            while (reader.Read())
+                            cmd.Parameters.AddWithValue("@nameSearchTerm", "%" + nameSearchTerm + "%");
+                            using (SQLiteDataReader reader = cmd.ExecuteReader())
                             {
-                                RestaurantTable table = new RestaurantTable
+                                while (reader.Read())
                                 {
-                                    Id = reader.GetInt32(0),
-                                    TableNumber = reader.GetInt32(1),
-                                    Seats = reader.GetInt32(2),
-                                    Status = reader.GetString(3),
-                                    Handler = reader.GetString(4)
-                                };
-                                tables.Add(table);
+                                    RestaurantTable table = new RestaurantTable
+                                    {
+                                        Id = reader.GetInt32(0),
+                                        TableNumber = reader.GetInt32(1),
+                                        Seats = reader.GetInt32(2),
+                                        Status = reader.GetString(3),
+                                        Handler = reader.GetString(4)
+                                    };
+                                    tables.Add(table);
+                                }
                             }
                         }
                     }
                 }
-            }
+                        
+                        
+                    }
+                    
+                   
+
+                    
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message); // Display any errors
