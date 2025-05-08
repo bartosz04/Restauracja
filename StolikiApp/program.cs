@@ -15,7 +15,6 @@ namespace StolikiApp
         }
     }
 
-    
     public class LoginForm : Form
     {
         private TextBox txtusername;
@@ -63,7 +62,7 @@ namespace StolikiApp
                 MessageBox.Show("Zalogowano pomyślnie!");
                 this.Hide();
                 var mainForm = new MainForm();
-                mainForm.FormClosed += (s, args) => this.Close(); 
+                mainForm.FormClosed += (s, args) => this.Close();
                 mainForm.Show();
             }
             else
@@ -76,10 +75,6 @@ namespace StolikiApp
         }
     }
 
-    // Klasa BasePanel:
-    //  dziedziczy po Panel oraz definiuje wspólne właściwości
-    // i metody dla paneli w aplikacji. Inne klasy, takie jak LeftPanel i RightPanel,
-    // dziedziczą po BasePanel, co pozwala im na korzystanie z jego funkcji.
     public abstract class BasePanel : Panel
     {
         public BasePanel()
@@ -96,34 +91,34 @@ namespace StolikiApp
         public static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
     }
 
-    // dzieki dziedziczeniu po BasePanel, LeftPanel i RightPanel mozna latwo dodawactypy kart 
     public abstract class BaseGroupCard : Panel
     {
-        private Label lblGroupName;
-        private Label lblGuestsCount;
+        protected Label lblGroupName;
+        protected Label lblGuestsCount;
 
         public string GroupName { get; set; }
         public int ChildrenCount { get; set; }
         public GroupStatus Status { get; set; }
+        protected const int MaxGuests = 4; // Max guests per table
 
         public BaseGroupCard(string groupName, int childrenCount, GroupStatus status)
         {
             GroupName = groupName;
             ChildrenCount = childrenCount;
             Status = status;
-            Size = new Size(120, 100);
-            Margin = new Padding(10);
+            Size = new Size(140, 110);
+            Margin = new Padding(15);
             BackColor = GetCardColor();
             Region = Region.FromHrgn(BasePanel.CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
-            this.Click += (s, e) => OnCardClick();
+            Cursor = Cursors.Hand;
 
-            
             lblGroupName = new Label
             {
                 Text = GroupName,
                 Dock = DockStyle.Top,
+                Height = 30,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = new Font("Arial", 10, FontStyle.Bold),
+                Font = new Font("Arial", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(122, 79, 255),
                 Padding = new Padding(5)
             };
@@ -132,19 +127,50 @@ namespace StolikiApp
             {
                 Text = $"{ChildrenCount} gości",
                 Dock = DockStyle.Bottom,
+                Height = 25,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Arial", 9, FontStyle.Regular),
                 ForeColor = Color.Gray,
                 Padding = new Padding(5)
             };
 
-            
             Controls.Add(lblGroupName);
             Controls.Add(lblGuestsCount);
+
+            this.Click += (s, e) => OnCardClick();
+            lblGroupName.Click += (s, e) => OnCardClick();
+            lblGuestsCount.Click += (s, e) => OnCardClick();
         }
+
         protected virtual void OnCardClick()
         {
-            
+            ShowAddGuestsDialog();
+        }
+
+        protected void ShowAddGuestsDialog()
+        {
+            using var dlg = new AddGuestsOptionsForm(ChildrenCount, MaxGuests);
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                int guestsToAdd = dlg.GuestsToAdd;
+                int waiterNumber = dlg.WaiterNumber;
+
+                if (ChildrenCount + guestsToAdd > MaxGuests)
+                {
+                    MessageBox.Show($"Nie można dodać {guestsToAdd} gości. Maksymalna liczba gości to {MaxGuests}.");
+                    return;
+                }
+
+                ChildrenCount += guestsToAdd;
+                UpdateGuestCount();
+
+                MessageBox.Show($"Dodano {guestsToAdd} gości do {GroupName}. Kelner: {waiterNumber}. Łącznie: {ChildrenCount} gości.");
+            }
+        }
+
+        protected void UpdateGuestCount()
+        {
+            lblGuestsCount.Text = $"{ChildrenCount} gości";
         }
 
         private Color GetCardColor() =>
@@ -161,48 +187,107 @@ namespace StolikiApp
     public class AvailableGroupCard : BaseGroupCard
     {
         public AvailableGroupCard(string groupName, int childrenCount) : base(groupName, childrenCount, GroupStatus.Available) { }
-        
-        protected override void OnCardClick()
-        {
-            var addGuestsForm = new AddGuestsForm();
-            addGuestsForm.ShowDialog();
-        }
+
         public override void DisplayCardDetails() => Console.WriteLine($"{GroupName} is available with {ChildrenCount} children.");
     }
 
     public class OccupiedGroupCard : BaseGroupCard
     {
         public OccupiedGroupCard(string groupName, int childrenCount) : base(groupName, childrenCount, GroupStatus.Occupied) { }
-        public override void DisplayCardDetails() => Console.WriteLine($"{GroupName} is occupied with {ChildrenCount} children.");
+
         protected override void OnCardClick()
         {
-            var addGuestsForm = new AddGuestsForm();
-            addGuestsForm.ShowDialog();
+            ShowAddGuestsDialog();
         }
+
+        public override void DisplayCardDetails() => Console.WriteLine($"{GroupName} is occupied with {ChildrenCount} children.");
     }
 
     public class ReservedGroupCard : BaseGroupCard
     {
         public ReservedGroupCard(string groupName, int childrenCount) : base(groupName, childrenCount, GroupStatus.Reserved) { }
-        public override void DisplayCardDetails() => Console.WriteLine($"{GroupName} is reserved for {ChildrenCount} children.");
+
         protected override void OnCardClick()
         {
-            var addGuestsForm = new AddGuestsForm();
-            addGuestsForm.ShowDialog();
+            ShowAddGuestsDialog();
         }
+
+        public override void DisplayCardDetails() => Console.WriteLine($"{GroupName} is reserved for {ChildrenCount} children.");
     }
 
     public enum GroupStatus { Available, Occupied, Reserved }
 
-    
+    public class AddGuestsOptionsForm : Form
+    {
+        private NumericUpDown nudGuests;
+        private NumericUpDown nudWaiter;
+        private Button buttonAdd;
+        private Button buttonCancel;
+        private Label lblGuests;
+        private Label lblWaiter;
+
+        public int GuestsToAdd => (int)nudGuests.Value;
+        public int WaiterNumber => (int)nudWaiter.Value;
+
+        public AddGuestsOptionsForm(int currentGuests, int maxGuests)
+        {
+            Text = "Dodaj gości i przypisz kelnera";
+            Size = new Size(320, 240);
+            StartPosition = FormStartPosition.CenterParent;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+
+            lblGuests = new Label() { Text = "Liczba gości do dodania (1-4):", Left = 15, Top = 20, Width = 200 };
+            nudGuests = new NumericUpDown() { Left = 15, Top = 45, Width = 200, Minimum = 1, Maximum = Math.Max(1, maxGuests - currentGuests), Value = 1 };
+
+            lblWaiter = new Label() { Text = "Numer kelnera (1-4):", Left = 15, Top = 75, Width = 200 };
+            nudWaiter = new NumericUpDown() { Left = 15, Top = 100, Width = 200, Minimum = 1, Maximum = 4, Value = 1 };
+
+            buttonAdd = new Button() { Text = "Dodaj", Left = 15, Top = 130, Width = 95 };
+            buttonAdd.Click += (s, e) =>
+            {
+                if (nudGuests.Value < 1 || nudGuests.Value > maxGuests - currentGuests)
+                {
+                    MessageBox.Show("Nieprawidłowa liczba gości.");
+                    return;
+                }
+                DialogResult = DialogResult.OK;
+                Close();
+            };
+
+            buttonCancel = new Button() { Text = "Anuluj", Left = 120, Top = 130, Width = 95 };
+            buttonCancel.Click += (s, e) => { DialogResult = DialogResult.Cancel; Close(); };
+
+            Controls.Add(lblGuests);
+            Controls.Add(nudGuests);
+            Controls.Add(lblWaiter);
+            Controls.Add(nudWaiter);
+            Controls.Add(buttonAdd);
+            Controls.Add(buttonCancel);
+        }
+    }
+
+    public class OrdersForm : Form
+    {
+        public OrdersForm()
+        {
+            Text = "Zamówienia";
+            Size = new Size(600, 400);
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+    }
+
     public class MainForm : Form
     {
         private BasePanel leftPanel;
         private BasePanel rightPanel;
         private Panel topSearchPanel;
-        private TextBox tbStoliki;
-        private Label lblMenu;
-        private Label lblWybierzGrupe;
+        private Label lblStoliki;
+        private Button btnZamowienia;
+        private Button btnWyloguj;
+        
+        private Label lblWybierzStolik;
         private FlowLayoutPanel groupsFlowPanel;
 
         public MainForm()
@@ -225,23 +310,70 @@ namespace StolikiApp
             rightPanel = new RightPanel { Size = new Size(320, 660), Location = new Point(860, 20) };
             Controls.Add(rightPanel);
 
-            topSearchPanel = new Panel { BackColor = Color.FromArgb(230, 249, 249), Size = new Size(leftPanel.Width - 40, 40), Location = new Point(20, 20) };
+            topSearchPanel = new Panel { BackColor = Color.FromArgb(230, 249, 249), Size = new Size(leftPanel.Width - 40, 50), Location = new Point(20, 20), Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right };
             leftPanel.Controls.Add(topSearchPanel);
 
-            tbStoliki = new TextBox { Text = "Stoliki", ReadOnly = true, Size = new Size(280, 24) };
-            topSearchPanel.Controls.Add(tbStoliki);
-
-            lblMenu = new Label { Text = "Menu", Size = new Size(280, 24), Location = new Point(300, 0) };
-            topSearchPanel.Controls.Add(lblMenu);
-
-            lblWybierzGrupe = new Label
+            lblStoliki = new Label()
             {
-                Text = "Wybierz grupę",
-                Font = new Font("Inter", 11F, FontStyle.Bold),
+                Text = "Stoliki",
+                AutoSize = false,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Font = new Font("Inter", 16F, FontStyle.Bold),
                 ForeColor = Color.FromArgb(122, 79, 255),
-                Location = new Point(20, 70)
+                Size = new Size(180, 40),
+                Location = new Point(10, 5)
             };
-            leftPanel.Controls.Add(lblWybierzGrupe);
+            topSearchPanel.Controls.Add(lblStoliki);
+
+            btnZamowienia = new Button()
+            {
+                Text = "Zamówienia",
+                Size = new Size(180, 40),
+                Location = new Point(lblStoliki.Right + 10, 5),
+                Font = new Font("Inter", 16F, FontStyle.Bold),
+                ForeColor = Color.FromArgb(122, 79, 255),
+                BackColor = Color.Transparent,
+                FlatStyle = FlatStyle.Flat,
+                Cursor = Cursors.Hand,
+                TextAlign = ContentAlignment.MiddleLeft,
+                TabStop = false
+            };
+            btnZamowienia.FlatAppearance.BorderSize = 0;
+            btnZamowienia.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnZamowienia.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 240, 255);
+            btnZamowienia.Click += BtnZamowienia_Click;
+            topSearchPanel.Controls.Add(btnZamowienia);
+
+            btnWyloguj = new Button()
+            {
+                Text = "Wyloguj",
+                Size = new Size(180, 40),
+                Location = new Point(btnZamowienia.Right + 10, 5),
+                Font = new Font("Inter", 16F, FontStyle.Bold),
+                ForeColor = Color.FromArgb(122, 79, 255),
+                BackColor = Color.Transparent,
+                FlatStyle = FlatStyle.Flat,
+                Cursor = Cursors.Hand,
+                TextAlign = ContentAlignment.MiddleLeft,
+                TabStop = false
+            };
+            btnWyloguj.FlatAppearance.BorderSize = 0;
+            btnWyloguj.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnWyloguj.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 240, 255);
+            btnWyloguj.Click += BtnWyloguj_Click;
+            topSearchPanel.Controls.Add(btnWyloguj);
+
+          
+
+            lblWybierzStolik = new Label
+            {
+                Text = "Wybierz stolik",
+                Font = new Font("Inter", 13F, FontStyle.Bold),
+                ForeColor = Color.FromArgb(122, 79, 255),
+                Location = new Point(20, 130),
+                AutoSize = true
+            };
+            leftPanel.Controls.Add(lblWybierzStolik);
 
             groupsFlowPanel = new FlowLayoutPanel
             {
@@ -249,14 +381,33 @@ namespace StolikiApp
                 WrapContents = true,
                 Dock = DockStyle.Bottom,
                 Padding = new Padding(10),
-                Size = new Size(leftPanel.Width - 40, leftPanel.Height - 120),
-                Location = new Point(20, 100)
+                Size = new Size(leftPanel.Width - 40, leftPanel.Height - 180),
+                Location = new Point(20, 160),
+                FlowDirection = FlowDirection.LeftToRight,
+                BackColor = Color.Transparent,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom
             };
             leftPanel.Controls.Add(groupsFlowPanel);
 
-            AddGroupCard(new AvailableGroupCard("Grupa 1", 15));
-            AddGroupCard(new OccupiedGroupCard("Grupa 2", 20));
-            AddGroupCard(new ReservedGroupCard("Grupa 3", 18));
+            AddGroupCard(new AvailableGroupCard("Stolik - Okno", 0));
+            AddGroupCard(new OccupiedGroupCard("Stolik - Schody", 0));
+            AddGroupCard(new ReservedGroupCard("Stolik - Środek", 0));
+            AddGroupCard(new AvailableGroupCard("Stolik - Środek", 0));
+            AddGroupCard(new AvailableGroupCard("Stolik - Drzwi", 0));
+        }
+
+        private void BtnZamowienia_Click(object sender, EventArgs e)
+        {
+            var ordersForm = new OrdersForm();
+            ordersForm.ShowDialog();
+        }
+
+        private void BtnWyloguj_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
         }
 
         private void AddGroupCard(BaseGroupCard groupCard)
@@ -268,46 +419,4 @@ namespace StolikiApp
 
     public class LeftPanel : BasePanel { }
     public class RightPanel : BasePanel { }
-    public class AddGuestsForm : Form
-    {
-        private TextBox txtGuestName;
-        private Button buttonAdd;
-        private Button buttonCancel;
-
-        public AddGuestsForm()
-        {
-            this.Text = "Dodaj Gościa";
-            this.Size = new Size(300, 200);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            Label labelGuestName = new Label() { Text = "Imię Gościa:", Left = 20, Top = 20, Width = 100 };
-            txtGuestName = new TextBox() { Left = 120, Top = 20, Width = 150 };
-
-            buttonAdd = new Button() { Text = "Dodaj", Left = 20, Top = 60, Width = 100 };
-            buttonAdd.Click += ButtonAdd_Click;
-
-            buttonCancel = new Button() { Text = "Anuluj", Left = 130, Top = 60, Width = 100 };
-            buttonCancel.Click += (s, e) => this.Close();
-
-            this.Controls.Add(labelGuestName);
-            this.Controls.Add(txtGuestName);
-            this.Controls.Add(buttonAdd);
-            this.Controls.Add(buttonCancel);
-        }
-
-        private void ButtonAdd_Click(object sender, EventArgs e)
-        {
-            
-            string guestName = txtGuestName.Text;
-            if (!string.IsNullOrWhiteSpace(guestName))
-            {
-                MessageBox.Show($"Dodano gościa: {guestName}");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Proszę wpisać imię gościa.");
-            }
-        }
-    }
 }

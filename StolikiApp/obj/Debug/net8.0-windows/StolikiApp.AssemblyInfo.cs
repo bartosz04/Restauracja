@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StolikiApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9177af58e6862e2f1d724f784820038dc1ceb0a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("StolikiApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StolikiApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
