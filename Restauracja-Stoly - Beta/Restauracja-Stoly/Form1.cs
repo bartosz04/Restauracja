@@ -14,6 +14,7 @@ namespace Restauracja_Stoly
             InitializeComponent();
             buttonSearch.Click += buttonSearch_Click;
             buttonChange.Click += buttonChange_Click; 
+            buttonRegister.Click += buttonRegister_Click; 
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -30,6 +31,13 @@ namespace Restauracja_Stoly
             Form2 form2 = new Form2(); // Create an instance of Form2
             form2.Show(); // Show Form2
             this.Hide(); // Optionally hide Form1
+        }
+        
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm(); 
+            registerForm.Show(); 
+            this.Hide(); 
         }
 
         private List<RestaurantTable> SearchTables(string nameSearchTerm, bool isReserved, bool isEmpty)

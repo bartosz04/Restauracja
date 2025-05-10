@@ -2,157 +2,178 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Label = new System.Windows.Forms.Label();
+            groupBoxFilters = new System.Windows.Forms.GroupBox();
             checkBoxReserved = new System.Windows.Forms.CheckBox();
+            checkBoxEmpty = new System.Windows.Forms.CheckBox();
             textBoxName = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             buttonSearch = new System.Windows.Forms.Button();
             dataGridViewResults = new System.Windows.Forms.DataGridView();
             buttonChange = new System.Windows.Forms.Button();
-            checkBoxEmpty = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
+            buttonRegister = new System.Windows.Forms.Button(); // Register Button
+            toolTip1 = new System.Windows.Forms.ToolTip();
+            ((System.ComponentModel.ISupportInitialize)(dataGridViewResults)).BeginInit();
+            groupBoxFilters.SuspendLayout();
             SuspendLayout();
             // 
             // Label
             // 
             Label.AutoSize = true;
-            Label.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            Label.Location = new System.Drawing.Point(421, 26);
+            Label.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            Label.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            Label.Location = new System.Drawing.Point(400, 20);
             Label.Name = "Label";
-            Label.Size = new System.Drawing.Size(133, 57);
+            Label.Size = new System.Drawing.Size(330, 57);
             Label.TabIndex = 0;
-            Label.Text = "Stoly";
+            Label.Text = "Stoły Restauracji";
             Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            Label.Click += label1_Click;
+            // 
+            // groupBoxFilters
+            // 
+            groupBoxFilters.Controls.Add(checkBoxReserved);
+            groupBoxFilters.Controls.Add(checkBoxEmpty);
+            groupBoxFilters.Controls.Add(textBoxName);
+            groupBoxFilters.Controls.Add(label1);
+            groupBoxFilters.Font = new System.Drawing.Font("DejaVu Serif Condensed", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            groupBoxFilters.Location = new System.Drawing.Point(50, 100);
+            groupBoxFilters.Name = "groupBoxFilters";
+            groupBoxFilters.Size = new System.Drawing.Size(500, 220);
+            groupBoxFilters.TabIndex = 1;
+            groupBoxFilters.TabStop = false;
+            groupBoxFilters.Text = "Filtry";
+            groupBoxFilters.BackColor = System.Drawing.Color.Lavender;
             // 
             // checkBoxReserved
             // 
             checkBoxReserved.AutoSize = true;
-            checkBoxReserved.Font = new System.Drawing.Font("DejaVu Serif Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            checkBoxReserved.Location = new System.Drawing.Point(400, 108);
+            checkBoxReserved.Location = new System.Drawing.Point(20, 40);
             checkBoxReserved.Name = "checkBoxReserved";
-            checkBoxReserved.Size = new System.Drawing.Size(180, 28);
-            checkBoxReserved.TabIndex = 1;
+            checkBoxReserved.Size = new System.Drawing.Size(180, 26);
+            checkBoxReserved.TabIndex = 0;
             checkBoxReserved.Text = "Zarezerwowane";
+            toolTip1.SetToolTip(checkBoxReserved, "Pokaż tylko zarezerwowane stoły");
             checkBoxReserved.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEmpty
+            // 
+            checkBoxEmpty.AutoSize = true;
+            checkBoxEmpty.Location = new System.Drawing.Point(20, 80);
+            checkBoxEmpty.Name = "checkBoxEmpty";
+            checkBoxEmpty.Size = new System.Drawing.Size(80, 26);
+            checkBoxEmpty.TabIndex = 1;
+            checkBoxEmpty.Text = "Wolne";
+            toolTip1.SetToolTip(checkBoxEmpty, "Pokaż tylko wolne stoły");
+            checkBoxEmpty.UseVisualStyleBackColor = true;
             // 
             // textBoxName
             // 
-            textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right));
-            textBoxName.Font = new System.Drawing.Font("DejaVu Serif Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            textBoxName.Location = new System.Drawing.Point(489, 186);
+            textBoxName.Location = new System.Drawing.Point(160, 140);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new System.Drawing.Size(190, 32);
+            textBoxName.Size = new System.Drawing.Size(300, 30);
             textBoxName.TabIndex = 2;
-            textBoxName.TextChanged += textBox1_TextChanged;
+            toolTip1.SetToolTip(textBoxName, "Podaj nazwę przypisaną do stołu");
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("DejaVu Serif Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            label1.Location = new System.Drawing.Point(339, 189);
+            label1.Location = new System.Drawing.Point(20, 145);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(144, 24);
+            label1.Size = new System.Drawing.Size(134, 22);
             label1.TabIndex = 3;
             label1.Text = "Przypisane do";
             // 
             // buttonSearch
             // 
-            buttonSearch.Font = new System.Drawing.Font("DejaVu Serif Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            buttonSearch.Location = new System.Drawing.Point(411, 233);
+            buttonSearch.Font = new System.Drawing.Font("DejaVu Serif Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonSearch.ForeColor = System.Drawing.Color.Black;
+            buttonSearch.BackColor = System.Drawing.Color.DarkSlateBlue;
+            buttonSearch.Image = ((System.Drawing.Image)(resources.GetObject("searchIcon")));
+            buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonSearch.Location = new System.Drawing.Point(600, 140);
             buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new System.Drawing.Size(133, 52);
-            buttonSearch.TabIndex = 5;
+            buttonSearch.Size = new System.Drawing.Size(200, 60);
+            buttonSearch.TabIndex = 2;
             buttonSearch.Text = "Wyszukaj";
+            buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            toolTip1.SetToolTip(buttonSearch, "Kliknij, aby wyszukać stoły");
             buttonSearch.UseVisualStyleBackColor = true;
             // 
             // dataGridViewResults
             // 
             dataGridViewResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResults.GridColor = System.Drawing.SystemColors.Info;
-            dataGridViewResults.Location = new System.Drawing.Point(99, 310);
+            dataGridViewResults.Location = new System.Drawing.Point(50, 360);
             dataGridViewResults.Name = "dataGridViewResults";
-            dataGridViewResults.Size = new System.Drawing.Size(757, 212);
-            dataGridViewResults.TabIndex = 6;
-            dataGridViewResults.CellContentClick += dataGridViewResults_CellContentClick;
+            dataGridViewResults.Size = new System.Drawing.Size(1100, 350);
+            dataGridViewResults.TabIndex = 3;
+            dataGridViewResults.BackgroundColor = System.Drawing.Color.LavenderBlush;
             // 
             // buttonChange
             // 
-            buttonChange.Font = new System.Drawing.Font("DejaVu Serif Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            buttonChange.Location = new System.Drawing.Point(712, 26);
+            buttonChange.Font = new System.Drawing.Font("DejaVu Serif Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonChange.ForeColor = System.Drawing.Color.Black;
+            buttonChange.BackColor = System.Drawing.Color.DarkSlateBlue;
+            buttonChange.Image = ((System.Drawing.Image)(resources.GetObject("editIcon")));
+            buttonChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonChange.Location = new System.Drawing.Point(820, 140);
             buttonChange.Name = "buttonChange";
-            buttonChange.Size = new System.Drawing.Size(186, 71);
-            buttonChange.TabIndex = 7;
-            buttonChange.Text = "Zmien Status";
+            buttonChange.Size = new System.Drawing.Size(250, 60);
+            buttonChange.TabIndex = 4;
+            buttonChange.Text = "Zmień Status";
+            buttonChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            toolTip1.SetToolTip(buttonChange, "Kliknij, aby zmienić status stołu");
             buttonChange.UseVisualStyleBackColor = true;
             // 
-            // checkBoxEmpty
+            // buttonRegister
             // 
-            checkBoxEmpty.Font = new System.Drawing.Font("DejaVu Serif Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)238));
-            checkBoxEmpty.Location = new System.Drawing.Point(400, 142);
-            checkBoxEmpty.Name = "checkBoxEmpty";
-            checkBoxEmpty.Size = new System.Drawing.Size(144, 38);
-            checkBoxEmpty.TabIndex = 8;
-            checkBoxEmpty.Text = "Wolne";
-            checkBoxEmpty.UseVisualStyleBackColor = true;
-            checkBoxEmpty.CheckedChanged += checkBox1_CheckedChanged;
+            buttonRegister.Font = new System.Drawing.Font("DejaVu Serif Condensed", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonRegister.ForeColor = System.Drawing.Color.Black;
+            buttonRegister.BackColor = System.Drawing.Color.DarkSlateBlue;
+            buttonRegister.Image = ((System.Drawing.Image)(resources.GetObject("registerIcon")));
+            buttonRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonRegister.Location = new System.Drawing.Point(820, 220); // Position below Change button
+            buttonRegister.Name = "buttonRegister";
+            buttonRegister.Size = new System.Drawing.Size(250, 60);
+            buttonRegister.TabIndex = 5;
+            buttonRegister.Text = "Rejestruj";
+            buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            toolTip1.SetToolTip(buttonRegister, "Kliknij, aby zarejestrować stół");
+            buttonRegister.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(948, 552);
-            Controls.Add(checkBoxEmpty);
+            ClientSize = new System.Drawing.Size(1200, 800); // Increased window size
+            MinimumSize = new System.Drawing.Size(1000, 600); // Prevent shrinking too small
+            BackColor = System.Drawing.Color.AliceBlue;
+            Controls.Add(buttonRegister);
             Controls.Add(buttonChange);
             Controls.Add(dataGridViewResults);
             Controls.Add(buttonSearch);
-            Controls.Add(label1);
-            Controls.Add(textBoxName);
-            Controls.Add(checkBoxReserved);
+            Controls.Add(groupBoxFilters);
             Controls.Add(Label);
-            Text = "Form1";
-            Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
+            Text = "Stoły Restauracji";
+            ((System.ComponentModel.ISupportInitialize)(dataGridViewResults)).EndInit();
+            groupBoxFilters.ResumeLayout(false);
+            groupBoxFilters.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
+        private System.Windows.Forms.Label Label;
+        private System.Windows.Forms.GroupBox groupBoxFilters;
+        private System.Windows.Forms.CheckBox checkBoxReserved;
         private System.Windows.Forms.CheckBox checkBoxEmpty;
-
-        #endregion
-
-        private Label Label;
-        private CheckBox checkBoxReserved;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label1;
-        private Button buttonSearch;
-        private DataGridView dataGridViewResults;
-        private Button buttonChange;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.DataGridView dataGridViewResults;
+        private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.Button buttonRegister; // Register Button
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
