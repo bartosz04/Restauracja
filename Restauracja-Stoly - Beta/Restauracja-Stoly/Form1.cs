@@ -7,16 +7,46 @@ namespace Restauracja_Stoly
 {
     public partial class Form1 : Form
     {
+        
+        private string? userType;
+
+        
+
+
+        
+
+
+
+        
         private string databaseFilePath = "restauracja_db.sqlite";
 
-        public Form1()
+        public Form1(string? userType)
         {
             InitializeComponent();
             buttonSearch.Click += buttonSearch_Click;
             buttonChange.Click += buttonChange_Click; 
             buttonRegister.Click += buttonRegister_Click; 
+            this.userType = userType;
         }
+        
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            if (userType == "admin")
+            {
+                RegisterForm registerForm = new RegisterForm(); 
+                registerForm.Show(); 
+                this.Hide(); 
+            }
+            else
+            {
+                MessageBox.Show("Rejestracja użytkowników jest dostępna wyłącznie dla administratorów.",
+                    "Odmowa dostępu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    
 
+
+        
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string nameSearchTerm = textBoxName.Text; // Get the search term from the TextBox
@@ -30,15 +60,12 @@ namespace Restauracja_Stoly
         {
             Form2 form2 = new Form2(); // Create an instance of Form2
             form2.Show(); // Show Form2
-            this.Hide(); // Optionally hide Form1
-        }
-        
-        private void buttonRegister_Click(object sender, EventArgs e)
-        {
-            RegisterForm registerForm = new RegisterForm(); 
-            registerForm.Show(); 
             this.Hide(); 
         }
+        
+        
+
+
 
         private List<RestaurantTable> SearchTables(string nameSearchTerm, bool isReserved, bool isEmpty)
         {
@@ -144,6 +171,7 @@ namespace Restauracja_Stoly
 
 
     }
+}
 
     public class RestaurantTable
     {
@@ -153,4 +181,3 @@ namespace Restauracja_Stoly
         public string Status { get; set; }
         public string Handler { get; set; }
     }
-}

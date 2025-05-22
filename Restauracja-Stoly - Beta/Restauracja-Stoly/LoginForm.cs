@@ -9,13 +9,20 @@ namespace Restauracja_Stoly
     public partial class LoginForm : Form
     {
         private string databaseFilePath = "restauracja_db.sqlite";
-        private TextBox txtusername; 
-        private TextBox txtpassword; 
+        private TextBox txtusername;
+        private TextBox txtpassword;
         private Button buttonLogin;
         private Button buttonClear;
         private Button buttonExit;
         private Label labelUsername;
         private Label labelPassword;
+        private string userType;
+
+        public string UserTypeValue
+        {
+            get { return userType; }
+        }
+
 
         public LoginForm()
         {
@@ -28,9 +35,10 @@ namespace Restauracja_Stoly
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             LoginUser(); // Call the login method here
+            UserType();
         }
 
-        
+
         private void LoginUser()
         {
             string username = txtusername.Text;
@@ -60,11 +68,20 @@ namespace Restauracja_Stoly
                         {
                             MessageBox.Show("Login successful!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                            // Create an instance of Form1
-                            Form1 form1 = new Form1();
-                            form1.Show(); // Show Form1
-                            this.Hide(); // Hide Form2
+
+                            string SelectTypeQuery = "SELECT Type FROM Users WHERE Username = @username";
+                            using (SQLiteCommand cmd2 = new SQLiteCommand(SelectTypeQuery, conn))
+                            {
+                                cmd2.Parameters.AddWithValue("@username", username);
+                                userType = cmd2.ExecuteScalar() as string;
+
+                                Form1 form1 = new Form1(userType); // Pass the userType to Form1
+                                form1.Show();
+
+                            }
+
+
+
                         }
                         else
                         {
@@ -78,14 +95,41 @@ namespace Restauracja_Stoly
             {
                 MessageBox.Show("An error occurred while trying to log in. Please try again.",
                     "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
         }
+
+        public void UserType()
+        {
+            string username = txtusername.Text;
+
+            try
+            {
+                string connectionString = $"Data Source={databaseFilePath};Version=3;";
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string SelectTypeQuery = "SELECT Type FROM Users WHERE Username = @username";
+                    using (SQLiteCommand cmd2 = new SQLiteCommand(SelectTypeQuery, conn))
+                    {
+                        cmd2.Parameters.AddWithValue("@username", username);
+                        this.userType = cmd2.ExecuteScalar() as string;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while trying to log in. Please try again.",
+                    "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 
     public static class PasswordScript
     {
-        
+
         private const int SaltSize = 16;
         private const int HashSize = 20;
         private const int Iterations = 10000;
@@ -97,7 +141,7 @@ namespace Restauracja_Stoly
             {
                 rng.GetBytes(salt);
             }
-    
+
             using (var pbkdf2 = new Rfc2898DeriveBytes(Password, salt, Iterations))
             {
                 var hash = pbkdf2.GetBytes(HashSize);
@@ -126,7 +170,13 @@ namespace Restauracja_Stoly
                 if (hashBytes[i + SaltSize] != hash[i])
                     return false;
             }
+
             return true;
         }
     }
 }
+    
+     
+    
+
+

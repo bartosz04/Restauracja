@@ -33,13 +33,18 @@ namespace Restauracja_Stoly
                 txtPassword.Focus();  
                 return;
             }
+            RegisterUser(registrationData.Username, registrationData.Password);
+            
+            MessageBox.Show("Użytkownik został zarejestrowany.", "Rejestracja zakończona", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearAll();
+            txtUsername.Focus();
 
             
         }
 
         private void RegisterUser(string username, string password)
         {
-            string passwordHash = PasswordScript.HashPassword(password);
+            string passwordHash = PasswordScriptR.HashPassword(password);
             try
             {
                 string connectionString = $"Data Source={databaseFilePath};Version=3;";
@@ -111,34 +116,34 @@ namespace Restauracja_Stoly
             return true;
         }
     }
-
-}
-
-
-
-public class PasswordScript
-{
-    private const int SaltSize = 16;
-    private const int HashSize = 20;
-    private const int Iterations = 10000;
-
-    public static string HashPassword(string Password)
+    public class PasswordScriptR
     {
-        byte[] salt = new byte[SaltSize];
-        using (var rng = new RNGCryptoServiceProvider())
+        private const int SaltSize = 16;
+        private const int HashSize = 20;
+        private const int Iterations = 10000;
+
+        public static string HashPassword(string Password)
         {
-            rng.GetBytes(salt);
-        }
+            byte[] salt = new byte[SaltSize];
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(salt);
+            }
     
-        using (var pbkdf2 = new Rfc2898DeriveBytes(Password, salt, Iterations))
-        {
-            var hash = pbkdf2.GetBytes(HashSize);
-            var hashBytes = new byte[SaltSize + HashSize];
-            Array.Copy(salt, 0, hashBytes, 0, SaltSize);
-            Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
-            return Convert.ToBase64String(hashBytes);
+            using (var pbkdf2 = new Rfc2898DeriveBytes(Password, salt, Iterations))
+            {
+                var hash = pbkdf2.GetBytes(HashSize);
+                var hashBytes = new byte[SaltSize + HashSize];
+                Array.Copy(salt, 0, hashBytes, 0, SaltSize);
+                Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
+
+    
     }
 
-    
 }
+
+
+

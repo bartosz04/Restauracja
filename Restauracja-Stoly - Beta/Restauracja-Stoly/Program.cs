@@ -13,5 +13,7 @@ namespace Restauracja_Stoly
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
         }
+        
     }
+    
 }

@@ -6,6 +6,8 @@ namespace Restauracja_Stoly
 {
     public partial class Form2 : Form
     {
+        private string? userType;
+        
         private string databaseFilePath = "restauracja_db.sqlite";
 
         public Form2()
@@ -86,7 +88,7 @@ namespace Restauracja_Stoly
         private void buttonChange_Click(object sender, EventArgs e)
         {
             // Create an instance of Form1
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(userType);
             form1.Show(); // Show Form1
             this.Close(); // Close Form2
         }
