@@ -79,7 +79,7 @@ namespace Restauracja_app
                     
                     if (isReserved && isEmpty)
                     {
-                        MessageBox.Show("Please select only one option.");
+                        MessageBox.Show("Proszę wybierz tylko jedną.");
                     }
                     else
                     {

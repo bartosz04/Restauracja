@@ -16,7 +16,7 @@
     <Compile Update="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="zamówienia.cs">
+    <Compile Update="zamowienia.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

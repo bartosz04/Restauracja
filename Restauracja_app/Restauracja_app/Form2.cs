@@ -25,7 +25,7 @@ namespace Restauracja_app
             // Try to parse the input from the tableNumber TextBox
             if (!int.TryParse(tableNumber.Text, out TtableNumber)) 
             {
-                MessageBox.Show("Please enter a valid table number.");
+                MessageBox.Show("Proszę wprowadzić prawidłowy numer tabeli.");
                 return;
             }
 
@@ -43,7 +43,7 @@ namespace Restauracja_app
             }
             else
             {
-                MessageBox.Show("Please select a status.");
+                MessageBox.Show("Proszę wybierz status.");
                 return;
             }
 
@@ -70,11 +70,11 @@ namespace Restauracja_app
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Table status updated successfully.");
+                            MessageBox.Show("Status tabeli został pomyślnie zaktualizowany.");
                         }
                         else
                         {
-                            MessageBox.Show("No table found with the specified table number.");
+                            MessageBox.Show("Nie znaleziono tabeli o podanym numerze.\r\n");
                         }
                     }
                 }

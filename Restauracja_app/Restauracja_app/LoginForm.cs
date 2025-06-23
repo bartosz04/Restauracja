@@ -59,14 +59,14 @@ namespace Restauracja_app
 
                         if (storedHash == null)
                         {
-                            MessageBox.Show("Invalid username or password.", "Login Failed",
+                            MessageBox.Show("\r\nNieprawidłowa nazwa użytkownika lub hasło.", "Logowanie nie powiodło się",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
                         if (PasswordScript.VerifyPassword(password, storedHash))
                         {
-                            MessageBox.Show("Login successful!", "Success",
+                            MessageBox.Show("Zaloguj się pomyślnie!", "Sukces",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             string SelectTypeQuery = "SELECT Type FROM Users WHERE Username = @username";
@@ -85,7 +85,7 @@ namespace Restauracja_app
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password.", "Login Failed",
+                            MessageBox.Show("Nieprawidłowa nazwa użytkownika lub hasło.", "Logowanie nie powiodło się",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
@@ -93,8 +93,8 @@ namespace Restauracja_app
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to log in. Please try again.",
-                    "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wystąpił błąd podczas próby logowania. Spróbuj ponownie.",
+                    "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -120,8 +120,8 @@ namespace Restauracja_app
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while trying to log in. Please try again.",
-                    "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wystąpił błąd podczas próby logowania. Spróbuj ponownie.",
+                    "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
