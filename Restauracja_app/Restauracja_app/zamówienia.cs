@@ -98,7 +98,7 @@ namespace Restauracja_app
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var pulpit = new pulpit();
+            var pulpit = new Pulpit();
             pulpit.Show();
         }
     }

@@ -77,7 +77,9 @@ namespace Restauracja_app
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var pulpit = new Pulpit();
+            pulpit.Show();
+            this.Close();
         }
 
         private void ClearAll()

@@ -75,7 +75,7 @@ namespace Restauracja_app
                                 cmd2.Parameters.AddWithValue("@username", username);
                                 userType = cmd2.ExecuteScalar() as string;
 
-                                pulpit form1 = new pulpit(); // Pass the userType to Form1
+                                Pulpit form1 = new Pulpit(); // Pass the userType to Form1
                                 form1.Show();
 
                             }
