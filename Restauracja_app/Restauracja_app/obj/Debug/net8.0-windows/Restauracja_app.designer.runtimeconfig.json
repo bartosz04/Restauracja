@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\kapik\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kapik\\.nuget\\packages",
+      "C:\\Users\\dlleo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dlleo\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

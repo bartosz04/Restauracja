@@ -70,3 +70,40 @@ C:\Users\pc\Downloads\Restauracja-scRIPex-patch-1\Restauracja_app\Restauracja_ap
 C:\Users\pc\Downloads\Restauracja-scRIPex-patch-1\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.genruntimeconfig.cache
 C:\Users\pc\Downloads\Restauracja-scRIPex-patch-1\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\ref\Restauracja_app.dll
 C:\Users\pc\Downloads\Restauracja-scRIPex-patch-1\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.zamowienia.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\Restauracja_app.exe
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\Restauracja_app.deps.json
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\Restauracja_app.runtimeconfig.json
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\Restauracja_app.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\Restauracja_app.pdb
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\EntityFramework.SqlServer.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\EntityFramework.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\System.Data.SQLite.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\System.Data.SQLite.EF6.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.csproj.AssemblyReference.cache
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.Form1.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.Form2.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.LoginForm.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.pulpit.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.zamowienia.resources
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.csproj.GenerateResource.cache
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.AssemblyInfoInputs.cache
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.AssemblyInfo.cs
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.csproj.CoreCompileInputs.cache
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.sourcelink.json
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restaura.60ABC099.Up2Date
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\refint\Restauracja_app.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.pdb
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.genruntimeconfig.cache
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\ref\Restauracja_app.dll
