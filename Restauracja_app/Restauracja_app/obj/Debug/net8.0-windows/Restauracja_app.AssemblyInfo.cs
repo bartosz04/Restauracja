@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Restauracja_app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+113eeabc2d533a5b486ce2d6bbdaf76d309699d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+231e3a0c60cf588b4456255606fcff5074004a48")]
 [assembly: System.Reflection.AssemblyProductAttribute("Restauracja_app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Restauracja_app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

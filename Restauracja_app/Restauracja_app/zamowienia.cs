@@ -1,11 +1,118 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Restauracja_app
 {
+    // ========== PARADYGMAT: ENKAPSULACJA ==========
+    // Każda klasa posiada swoje odpowiedzialności i ukrywa szczegóły implementacji
+
+    // ========== PARADYGMAT: DZIEDZICZENIE ==========
+    public class MenuItem
+    {
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+
+        public MenuItem(string name, decimal price)
+        {
+            Name = name;
+            Price = price;
+        }
+
+        // ========== PARADYGMAT: POLIMORFIZM ==========
+        public virtual decimal GetTotal(int quantity)
+        {
+            return Price * quantity;
+        }
+    }
+
+    // ========== DZIEDZICZENIE: OrderItem dziedziczy po MenuItem ==========
+    public class OrderItem : MenuItem
+    {
+        public int Quantity { get; set; }
+
+        public OrderItem(string name, decimal price, int quantity)
+            : base(name, price)
+        {
+            Quantity = quantity;
+        }
+
+        // ========== POLIMORFIZM: Nadpisanie metody GetTotal ==========
+        public override decimal GetTotal(int quantity)
+        {
+            return base.GetTotal(quantity);
+        }
+
+        public decimal LineTotal => Price * Quantity;
+    }
+
+    // ========== ENKAPSULACJA: Ukrycie logiki listy zamówień ==========
+    public class Order
+    {
+        private List<OrderItem> items = new List<OrderItem>();
+        public IReadOnlyList<OrderItem> Items => items;
+
+        public void AddItem(MenuItem item, int quantity)
+        {
+            var existing = items.FirstOrDefault(i => i.Name == item.Name);
+            if (existing != null)
+            {
+                existing.Quantity += quantity;
+            }
+            else
+            {
+                items.Add(new OrderItem(item.Name, item.Price, quantity));
+            }
+        }
+
+        public void Clear() => items.Clear();
+
+        public void RemoveAt(int index)
+        {
+            if (index >= 0 && index < items.Count)
+                items.RemoveAt(index);
+        }
+
+        public decimal GetTotal() => items.Sum(i => i.LineTotal);
+    }
+
+    // ========== ENKAPSULACJA + SINGLE RESPONSIBILITY: Klasa tylko do generowania paragonu ==========
+    public class Receipt
+    {
+        private readonly Order order;
+
+        public Receipt(Order order)
+        {
+            this.order = order;
+        }
+
+        public string Generate()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("====== PARAGON ======\n");
+
+            foreach (var item in order.Items)
+            {
+                sb.AppendLine($"{item.Name} x{item.Quantity} = {item.LineTotal:0.00} PLN");
+            }
+
+            sb.AppendLine("\n----------------------");
+            sb.AppendLine($"SUMA: {order.GetTotal():0.00} PLN");
+            sb.AppendLine("======================");
+
+            return sb.ToString();
+        }
+    }
+
+    // ========== KLASA GŁÓWNA FORMULARZA (KLIENT KODU) ==========
     public partial class zamowienia : Form
     {
+        private Order currentOrder = new Order(); // ========== KOMPOZYCJA: formularz korzysta z Order ==========
+
         public zamowienia()
         {
             InitializeComponent();
@@ -39,25 +146,17 @@ namespace Restauracja_app
                 if (quantity > 0)
                 {
                     string itemName = row.Cells["Danie"].Value.ToString();
-                    string priceText = row.Cells["Cena"].Value.ToString();
-                    bool updated = false;
+                    decimal price = decimal.Parse(row.Cells["Cena"].Value.ToString(), CultureInfo.InvariantCulture);
 
-                    foreach (DataGridViewRow orderRow in dgvLeft.Rows)
-                    {
-                        if (orderRow.Cells["Danie"].Value.ToString() == itemName)
-                        {
-                            int existingQty = Convert.ToInt32(orderRow.Cells["Ilość"].Value);
-                            orderRow.Cells["Ilość"].Value = existingQty + quantity;
-                            updated = true;
-                            break;
-                        }
-                    }
-
-                    if (!updated)
-                    {
-                        dgvLeft.Rows.Add(itemName, priceText, quantity, "Usuń");
-                    }
+                    var menuItem = new MenuItem(itemName, price);
+                    currentOrder.AddItem(menuItem, quantity);
                 }
+            }
+
+            dgvLeft.Rows.Clear();
+            foreach (var item in currentOrder.Items)
+            {
+                dgvLeft.Rows.Add(item.Name, item.Price, item.Quantity, "Usuń");
             }
 
             foreach (DataGridViewRow row in dgvMenu.Rows)
@@ -70,6 +169,7 @@ namespace Restauracja_app
 
         private void BtnClearOrder_Click(object sender, EventArgs e)
         {
+            currentOrder.Clear();
             dgvLeft.Rows.Clear();
             UpdateOrderTotal();
         }
@@ -100,6 +200,7 @@ namespace Restauracja_app
         {
             if (e.RowIndex >= 0 && dgvLeft.Columns[e.ColumnIndex].Name == "Usuń")
             {
+                currentOrder.RemoveAt(e.RowIndex);
                 dgvLeft.Rows.RemoveAt(e.RowIndex);
                 UpdateOrderTotal();
             }
@@ -107,31 +208,13 @@ namespace Restauracja_app
 
         private void BtnShowReceipt_Click(object sender, EventArgs e)
         {
-            if (dgvLeft.Rows.Count == 0)
+            if (!currentOrder.Items.Any())
             {
                 MessageBox.Show("Zamówienie jest puste.");
                 return;
             }
 
-            string receipt = "====== PARAGON ======\n\n";
-            decimal total = 0;
-
-            foreach (DataGridViewRow row in dgvLeft.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                string name = row.Cells["Danie"].Value?.ToString() ?? "";
-                decimal price = decimal.TryParse(row.Cells["Cena"].Value?.ToString(), out var p) ? p : 0;
-                int quantity = int.TryParse(row.Cells["Ilość"].Value?.ToString(), out var q) ? q : 0;
-
-                decimal lineTotal = price * quantity;
-                total += lineTotal;
-
-                receipt += $"{name} x{quantity} = {lineTotal:0.00} PLN\n";
-            }
-
-            receipt += $"\n----------------------\nSUMA: {total:0.00} PLN\n";
-            receipt += "======================";
+            var receipt = new Receipt(currentOrder).Generate(); // ========== KOMPOZYCJA: korzystanie z klasy Receipt ==========
 
             var receiptForm = new Form
             {
@@ -156,18 +239,7 @@ namespace Restauracja_app
 
         private void UpdateOrderTotal()
         {
-            decimal total = 0;
-
-            foreach (DataGridViewRow row in dgvLeft.Rows)
-            {
-                if (decimal.TryParse(row.Cells["Cena"].Value.ToString(), out decimal price) &&
-                    int.TryParse(row.Cells["Ilość"].Value.ToString(), out int quantity))
-                {
-                    total += price * quantity;
-                }
-            }
-
-            lblTotalCost.Text = $"Suma: {total:0.00} PLN";
+            lblTotalCost.Text = $"Suma: {currentOrder.GetTotal():0.00} PLN";
         }
     }
 }

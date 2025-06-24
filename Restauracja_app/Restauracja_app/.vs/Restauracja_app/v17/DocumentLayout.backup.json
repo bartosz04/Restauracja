@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|c:\\users\\dlleo\\desktop\\restauracja nowa\\restauracja\\restauracja_app\\restauracja_app\\zamowienia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|solutionrelative:zamowienia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|c:\\users\\dlleo\\desktop\\restauracja nowa\\restauracja\\restauracja_app\\restauracja_app\\zamowienia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|solutionrelative:zamowienia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|c:\\users\\dlleo\\desktop\\restauracja nowa\\restauracja\\restauracja_app\\restauracja_app\\zamowienia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270F2CD9-847E-4EA6-0AF3-80DE6E989B97}|Restauracja_app.csproj|solutionrelative:zamowienia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,26 +26,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "zamowienia.cs",
               "DocumentMoniker": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\zamowienia.cs",
               "RelativeDocumentMoniker": "zamowienia.cs",
               "ToolTip": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\zamowienia.cs*",
               "RelativeToolTip": "zamowienia.cs*",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAiwK0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAA2wJwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T10:51:49.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "zamowienia.Designer.cs",
               "DocumentMoniker": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\zamowienia.Designer.cs",
               "RelativeDocumentMoniker": "zamowienia.Designer.cs",
-              "ToolTip": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\zamowienia.Designer.cs*",
-              "RelativeToolTip": "zamowienia.Designer.cs*",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAiwLgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\dlleo\\Desktop\\Restauracja NOWA\\Restauracja\\Restauracja_app\\Restauracja_app\\zamowienia.Designer.cs",
+              "RelativeToolTip": "zamowienia.Designer.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAiwKMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T10:51:45.612Z",
               "EditorCaption": ""

@@ -94,7 +94,6 @@ C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.Form2.resources
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.LoginForm.resources
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.pulpit.resources
-C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.zamowienia.resources
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.csproj.GenerateResource.cache
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.AssemblyInfoInputs.cache
@@ -107,3 +106,4 @@ C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.pdb
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.genruntimeconfig.cache
 C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\ref\Restauracja_app.dll
+C:\Users\dlleo\Desktop\Restauracja NOWA\Restauracja\Restauracja_app\Restauracja_app\obj\Debug\net8.0-windows\Restauracja_app.MenuItem.resources
