@@ -8,13 +8,8 @@ using System.Globalization;
 
 namespace Restauracja_app
 {
-    // ========== PARADYGMAT: ENKAPSULACJA ==========
-    // Każda klasa posiada swoje odpowiedzialności i ukrywa szczegóły implementacji
-
-    // ========== PARADYGMAT: DZIEDZICZENIE ==========
     public class MenuItem
     {
-        
         public string Name { get; set; }
         public decimal Price { get; set; }
 
@@ -24,14 +19,12 @@ namespace Restauracja_app
             Price = price;
         }
 
-        // ========== PARADYGMAT: POLIMORFIZM ==========
         public virtual decimal GetTotal(int quantity)
         {
             return Price * quantity;
         }
     }
 
-    // ========== DZIEDZICZENIE: OrderItem dziedziczy po MenuItem ==========
     public class OrderItem : MenuItem
     {
         public int Quantity { get; set; }
@@ -42,7 +35,6 @@ namespace Restauracja_app
             Quantity = quantity;
         }
 
-        // ========== POLIMORFIZM: Nadpisanie metody GetTotal ==========
         public override decimal GetTotal(int quantity)
         {
             return base.GetTotal(quantity);
@@ -51,7 +43,6 @@ namespace Restauracja_app
         public decimal LineTotal => Price * Quantity;
     }
 
-    // ========== ENKAPSULACJA: Ukrycie logiki listy zamówień ==========
     public class Order
     {
         private List<OrderItem> items = new List<OrderItem>();
@@ -81,7 +72,6 @@ namespace Restauracja_app
         public decimal GetTotal() => items.Sum(i => i.LineTotal);
     }
 
-    // ========== ENKAPSULACJA + SINGLE RESPONSIBILITY: Klasa tylko do generowania paragonu ==========
     public class Receipt
     {
         private readonly Order order;
@@ -109,16 +99,20 @@ namespace Restauracja_app
         }
     }
 
-    // ========== KLASA GŁÓWNA FORMULARZA (KLIENT KODU) ==========
     public partial class zamowienia : Form
     {
-        private Order currentOrder = new Order(); // ========== KOMPOZYCJA: formularz korzysta z Order ==========
-        
+        private Order currentOrder = new Order();
         private pulpit _parentPulpit;
-        public zamowienia(pulpit parentPulpit)
+        private int _tableNumber; // ✅ dodane pole na numer stolika
+
+        // ✅ zmieniony konstruktor - dodajemy numer stolika
+        public zamowienia(pulpit parentPulpit, int tableNumber)
         {
             _parentPulpit = parentPulpit;
+            _tableNumber = tableNumber;
+
             InitializeComponent();
+            this.Text = $"Zamówienia - Stolik {_tableNumber}"; // ✅ ustawienie tytułu okna
             LoadMenuItems();
             UpdateOrderTotal();
         }
@@ -216,11 +210,11 @@ namespace Restauracja_app
                 return;
             }
 
-            var receipt = new Receipt(currentOrder).Generate(); // ========== KOMPOZYCJA: korzystanie z klasy Receipt ==========
+            var receipt = new Receipt(currentOrder).Generate();
 
             var receiptForm = new Form
             {
-                Text = "Paragon",
+                Text = $"Paragon - Stolik {_tableNumber}", // ✅ numer stolika w nagłówku
                 Size = new Size(400, 400),
                 BackColor = Color.White
             };

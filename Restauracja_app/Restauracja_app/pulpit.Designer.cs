@@ -41,35 +41,17 @@
             this.btnStoliki.UseVisualStyleBackColor = false;
             this.btnStoliki.BackColor = System.Drawing.Color.Transparent;
             this.btnStoliki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStoliki.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStoliki.TextAlign = ContentAlignment.MiddleCenter;
             this.btnStoliki.FlatAppearance.BorderSize = 0;
             this.btnStoliki.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnStoliki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255); 
             this.btnStoliki.Click += BtnStoliki_Click;
             // 
-            // btnZamówienia
-            // 
-            this.btnZamówienia.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Bold);
-            this.btnZamówienia.ForeColor = System.Drawing.Color.FromArgb(122, 79, 255);
-            this.btnZamówienia.Location = new System.Drawing.Point(200, 20);
-            this.btnZamówienia.Name = "btnZamówienia";
-            this.btnZamówienia.Size = new System.Drawing.Size(180, 40);
-            this.btnZamówienia.TabIndex = 1;
-            this.btnZamówienia.Text = "Zamówienia";
-            this.btnZamówienia.UseVisualStyleBackColor = false;
-            this.btnZamówienia.BackColor = System.Drawing.Color.Transparent;
-            this.btnZamówienia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZamówienia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZamówienia.FlatAppearance.BorderSize = 0;
-            this.btnZamówienia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnZamówienia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255);
-            this.btnZamówienia.Click += BtnZamowienia_Click;
-            // 
             // btnWyloguj
             // 
             this.btnWyloguj.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Bold);
             this.btnWyloguj.ForeColor = System.Drawing.Color.FromArgb(122, 79, 255);
-            this.btnWyloguj.Location = new System.Drawing.Point(560, 20);
+            this.btnWyloguj.Location = new System.Drawing.Point(400, 20);
             this.btnWyloguj.Name = "btnWyloguj";
             this.btnWyloguj.Size = new System.Drawing.Size(180, 40);
             this.btnWyloguj.TabIndex = 2;
@@ -77,7 +59,7 @@
             this.btnWyloguj.UseVisualStyleBackColor = false;
             this.btnWyloguj.BackColor = System.Drawing.Color.Transparent;
             this.btnWyloguj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWyloguj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWyloguj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnWyloguj.FlatAppearance.BorderSize = 0;
             this.btnWyloguj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnWyloguj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255);
@@ -87,7 +69,7 @@
             // 
             this.btnRejestrujStolik.Font = new System.Drawing.Font("Inter", 16F, System.Drawing.FontStyle.Bold);
             this.btnRejestrujStolik.ForeColor = System.Drawing.Color.FromArgb(122, 79, 255);
-            this.btnRejestrujStolik.Location = new System.Drawing.Point(380, 20);
+            this.btnRejestrujStolik.Location = new System.Drawing.Point(210, 20);
             this.btnRejestrujStolik.Name = "btnRejestrujStolik";
             this.btnRejestrujStolik.Size = new System.Drawing.Size(180, 40);
             this.btnRejestrujStolik.TabIndex = 3;
@@ -95,7 +77,7 @@
             this.btnRejestrujStolik.UseVisualStyleBackColor = false;
             this.btnRejestrujStolik.BackColor = System.Drawing.Color.Transparent;
             this.btnRejestrujStolik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRejestrujStolik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRejestrujStolik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRejestrujStolik.FlatAppearance.BorderSize = 0;
             this.btnRejestrujStolik.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRejestrujStolik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255);
