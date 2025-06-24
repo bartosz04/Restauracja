@@ -111,66 +111,7 @@
             this.lblWybierzStolik.TabIndex = 3;
             this.lblWybierzStolik.Text = "Rozkład stolików";
             // 
-            // lblOkno
-            // 
-            this.lblOkno.BackColor = System.Drawing.Color.White;
-            this.lblOkno.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular);
-            this.lblOkno.Location = new System.Drawing.Point(20, 100);
-            this.lblOkno.Name = "lblOkno";
-            this.lblOkno.Size = new Size(140, 110);
-            this.lblOkno.TabIndex = 4;
-            this.lblOkno.Text = "Stolik - Okno\n4 gości";
-            this.lblOkno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblOkno.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 140, 110, 15, 15));
-            // 
-            // lblSchody
-            // 
-            this.lblSchody.BackColor = System.Drawing.Color.LightGray;
-            this.lblSchody.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular);
-            this.lblSchody.Location = new System.Drawing.Point(165, 100);
-            this.lblSchody.Name = "lblSchody";
-            this.lblSchody.Size = new Size(140, 110);
-            this.lblSchody.TabIndex = 5;
-            this.lblSchody.Text = "Stolik - Schody\n0 gości";
-            this.lblSchody.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSchody.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 140, 110, 15, 15));
-            // 
-            // lblSrodek1
-            // 
-            this.lblSrodek1.BackColor = System.Drawing.Color.Yellow;
-            this.lblSrodek1.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular);
-            this.lblSrodek1.Location = new System.Drawing.Point(310, 100);
-            this.lblSrodek1.Name = "lblSrodek1";
-            this.lblSrodek1.Size = new Size(140, 110);
-            this.lblSrodek1.TabIndex = 6;
-            this.lblSrodek1.Text = "Stolik - Środek1\n0 gości";
-            this.lblSrodek1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSrodek1.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 140, 110, 15, 15));
-            // 
-            // lblSrodek2
-            // 
-            this.lblSrodek2.BackColor = System.Drawing.Color.White;
-            this.lblSrodek2.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular);
-            this.lblSrodek2.Location = new System.Drawing.Point(455, 100);
-            this.lblSrodek2.Name = "lblSrodek2";
-            this.lblSrodek2.Size = new Size(140, 110);
-            this.lblSrodek2.TabIndex = 7;
-            this.lblSrodek2.Text = "Stolik - Środek2\n0 gości";
-            this.lblSrodek2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSrodek2.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 140, 110, 15, 15));
-            // 
-            // lblDrwi
-            // 
-            this.lblDrwi.BackColor = System.Drawing.Color.White;
-            this.lblDrwi.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular);
-            this.lblDrwi.Location = new System.Drawing.Point(600, 100);
-            this.lblDrwi.Name = "lblDrwi";
-            this.lblDrwi.Size = new Size(140, 110);
-            this.lblDrwi.TabIndex = 8;
-            this.lblDrwi.Text = "Stolik - Drzwi\n0 gości";
-            this.lblDrwi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDrwi.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 140, 110, 15, 15));
-            // 
+           
             // pulpit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
