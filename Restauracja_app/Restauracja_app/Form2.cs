@@ -87,10 +87,7 @@ namespace Restauracja_app
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            // Create an instance of Form1
-            Form1 form1 = new Form1(userType);
-            form1.Show(); // Show Form1
-            this.Close(); // Close Form2
+            this.Hide();
         }
     }
 }

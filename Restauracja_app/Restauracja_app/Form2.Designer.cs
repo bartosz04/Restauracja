@@ -123,7 +123,7 @@ namespace Restauracja_app
             buttonChange.Name = "buttonChange";
             buttonChange.Size = new Size(149, 101);
             buttonChange.TabIndex = 8;
-            buttonChange.Text = "Sprawdz Status";
+            buttonChange.Text = "Wróć";
             buttonChange.UseVisualStyleBackColor = true;
             buttonChange.Click += button1_Click;
             // 

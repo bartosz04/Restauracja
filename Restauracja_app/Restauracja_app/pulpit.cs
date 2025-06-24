@@ -169,8 +169,8 @@ namespace Restauracja_app
 
     private void BtnStoliki_Click(object sender, EventArgs e)
     {
-        this.Hide();
-        var form1 = new Form1(userType);
+        
+        var form1 = new Form2();
         form1.ShowDialog();
     }
 

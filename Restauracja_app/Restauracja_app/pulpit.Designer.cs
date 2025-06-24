@@ -37,14 +37,15 @@
             this.btnStoliki.Name = "btnStoliki";
             this.btnStoliki.Size = new System.Drawing.Size(180, 40);
             this.btnStoliki.TabIndex = 0;
-            this.btnStoliki.Text = "Stoliki";
+            this.btnStoliki.Text = "Zmień status";
             this.btnStoliki.UseVisualStyleBackColor = false;
             this.btnStoliki.BackColor = System.Drawing.Color.Transparent;
             this.btnStoliki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStoliki.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStoliki.FlatAppearance.BorderSize = 0;
             this.btnStoliki.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStoliki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255);
+            this.btnStoliki.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(230, 240, 255); 
+            this.btnStoliki.Click += BtnStoliki_Click;
             // 
             // btnZamówienia
             // 
@@ -90,7 +91,7 @@
             this.btnRejestrujStolik.Name = "btnRejestrujStolik";
             this.btnRejestrujStolik.Size = new System.Drawing.Size(180, 40);
             this.btnRejestrujStolik.TabIndex = 3;
-            this.btnRejestrujStolik.Text = "Rejestruj stolik";
+            this.btnRejestrujStolik.Text = "Rejestruj klenera";
             this.btnRejestrujStolik.UseVisualStyleBackColor = false;
             this.btnRejestrujStolik.BackColor = System.Drawing.Color.Transparent;
             this.btnRejestrujStolik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
