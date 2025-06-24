@@ -15,10 +15,13 @@ namespace Restauracja_app
         private Dictionary<int, Panel> tablePanels = new Dictionary<int, Panel>();
 
         public pulpit(string? userType)
-    {
+        {
+
+            
         InitializeComponent();
         InitializeDynamicUI(); 
         InitializeTimer();
+        UpdateTableStatuses();
         this.userType = userType;
     }
 
@@ -174,8 +177,9 @@ namespace Restauracja_app
     private void BtnZamowienia_Click(object sender, EventArgs e)
     {
         this.Hide();
-        var zamowienia = new zamowienia();
+        var zamowienia = new zamowienia(this);
         zamowienia.Show();
+        
     }
 
     private void BtnWyloguj_Click(object sender, EventArgs e)

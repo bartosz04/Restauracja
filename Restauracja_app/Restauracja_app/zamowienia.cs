@@ -14,6 +14,7 @@ namespace Restauracja_app
     // ========== PARADYGMAT: DZIEDZICZENIE ==========
     public class MenuItem
     {
+        
         public string Name { get; set; }
         public decimal Price { get; set; }
 
@@ -112,9 +113,11 @@ namespace Restauracja_app
     public partial class zamowienia : Form
     {
         private Order currentOrder = new Order(); // ========== KOMPOZYCJA: formularz korzysta z Order ==========
-
-        public zamowienia()
+        
+        private pulpit _parentPulpit;
+        public zamowienia(pulpit parentPulpit)
         {
+            _parentPulpit = parentPulpit;
             InitializeComponent();
             LoadMenuItems();
             UpdateOrderTotal();
@@ -123,8 +126,7 @@ namespace Restauracja_app
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var pulpit = new pulpit();
-            pulpit.Show();
+            _parentPulpit.Show();
         }
 
         private void LoadMenuItems()
