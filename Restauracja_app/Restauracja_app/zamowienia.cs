@@ -8,11 +8,8 @@ using System.Globalization;
 
 namespace Restauracja_app
 {
-   
-    //Definiuje nazwę i cenę dania (Name, Price) jako właściwości z getterem i setterem.
     public class MenuItem
     {
-        
         public string Name { get; set; }
         public decimal Price { get; set; }
 
@@ -22,29 +19,22 @@ namespace Restauracja_app
             Price = price;
         }
 
-         // POLIMORFIZM 
-        //Metoda zwraca łączny koszt quantity sztuk tego menu. virtual umożliwia nadpisanie.
         public virtual decimal GetTotal(int quantity)
         {
             return Price * quantity;
         }
     }
 
-    //  DZIEDZICZENIE: OrderItem dziedziczy po MenuItem 
-    //Dziedziczy z MenuItem i dodaje własność Quantity.
     public class OrderItem : MenuItem
     {
         public int Quantity { get; set; }
 
-        //Konstruktor wywołuje konstruktor MenuItem i ustawia ilość.
         public OrderItem(string name, decimal price, int quantity)
             : base(name, price)
         {
             Quantity = quantity;
         }
 
-        //  POLIMORFIZM: Nadpisanie metody GetTotal 
-        //Nadpisuje metodę GetTotal. LineTotal to właściwość obliczająca łączny koszt tej pozycji.
         public override decimal GetTotal(int quantity)
         {
             return base.GetTotal(quantity);
@@ -53,13 +43,11 @@ namespace Restauracja_app
         public decimal LineTotal => Price * Quantity;
     }
 
-    //  ENKAPSULACJA: Ukrycie logiki listy zamówień 
     public class Order
     {
         private List<OrderItem> items = new List<OrderItem>();
         public IReadOnlyList<OrderItem> Items => items;
 
-        //AddItem() dodaje danie do zamówienia. Jeśli już istnieje, zwiększa ilość.
         public void AddItem(MenuItem item, int quantity)
         {
             var existing = items.FirstOrDefault(i => i.Name == item.Name);
@@ -75,7 +63,6 @@ namespace Restauracja_app
 
         public void Clear() => items.Clear();
 
-        //Usuwa element z listy zamówienia na podstawie indeksu.
         public void RemoveAt(int index)
         {
             if (index >= 0 && index < items.Count)
@@ -85,17 +72,15 @@ namespace Restauracja_app
         public decimal GetTotal() => items.Sum(i => i.LineTotal);
     }
 
-    //  ENKAPSULACJA + SINGLE RESPONSIBILITY: Klasa tylko do generowania paragonu 
-    //Przechowuje referencję do obiektu Order.
     public class Receipt
     {
         private readonly Order order;
-        //przypisanie orderu w konstruktorze.
+
         public Receipt(Order order)
         {
             this.order = order;
         }
-        //Generuje paragon jako tekst z listą pozycji i sumą końcową.
+
         public string Generate()
         {
             var sb = new StringBuilder();
@@ -114,17 +99,20 @@ namespace Restauracja_app
         }
     }
 
-    //  KLASA GŁÓWNA FORMULARZA (KLIENT KODU) 
-    
     public partial class zamowienia : Form
     {
-        private Order currentOrder = new Order(); //  KOMPOZYCJA: formularz korzysta z Order 
-        
+        private Order currentOrder = new Order();
         private pulpit _parentPulpit;
-        public zamowienia(pulpit parentPulpit)
+        private int _tableNumber; // ✅ dodane pole na numer stolika
+
+        // ✅ zmieniony konstruktor - dodajemy numer stolika
+        public zamowienia(pulpit parentPulpit, int tableNumber)
         {
             _parentPulpit = parentPulpit;
+            _tableNumber = tableNumber;
+
             InitializeComponent();
+            this.Text = $"Zamówienia - Stolik {_tableNumber}"; // ✅ ustawienie tytułu okna
             LoadMenuItems();
             UpdateOrderTotal();
         }
@@ -181,7 +169,7 @@ namespace Restauracja_app
             dgvLeft.Rows.Clear();
             UpdateOrderTotal();
         }
-        //obsluga + i - w dgvMenu
+
         private void DgvMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -222,11 +210,11 @@ namespace Restauracja_app
                 return;
             }
 
-            var receipt = new Receipt(currentOrder).Generate(); //  KOMPOZYCJA: korzystanie z klasy Receipt 
+            var receipt = new Receipt(currentOrder).Generate();
 
             var receiptForm = new Form
             {
-                Text = "Paragon",
+                Text = $"Paragon - Stolik {_tableNumber}", // ✅ numer stolika w nagłówku
                 Size = new Size(400, 400),
                 BackColor = Color.White
             };
