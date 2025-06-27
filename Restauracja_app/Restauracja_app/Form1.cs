@@ -43,17 +43,17 @@ namespace Restauracja_app
         
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string nameSearchTerm = textBoxName.Text; // Get the search term from the TextBox
-            bool isReserved = checkBoxReserved.Checked; // Check if the checkbox is checked
-            bool isEmpty = checkBoxEmpty.Checked; // Check if the checkbox is checked
-            List<RestaurantTable> results = SearchTables(nameSearchTerm, isReserved , isEmpty); // Call the search method
-            DisplayResults(results); // Display the results in the DataGridView
+            string nameSearchTerm = textBoxName.Text; 
+            bool isReserved = checkBoxReserved.Checked;
+            bool isEmpty = checkBoxEmpty.Checked;
+            List<RestaurantTable> results = SearchTables(nameSearchTerm, isReserved , isEmpty);
+            DisplayResults(results);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(); // Create an instance of Form2
-            form2.Show(); // Show Form2
+            Form2 form2 = new Form2();
+            form2.Show(); 
             this.Hide(); 
         }
         
@@ -72,8 +72,6 @@ namespace Restauracja_app
                 {
                     conn.Open();
                     string selectQuery = "SELECT * FROM tables WHERE handler LIKE @nameSearchTerm";
-
-                    // Adjust the query based on the checkbox state
                     
                     
                     
@@ -85,15 +83,15 @@ namespace Restauracja_app
                     {
                         if (isReserved)
                         {
-                            selectQuery += " AND status = 'reserved'"; // Search for reserved tables
+                            selectQuery += " AND status = 'reserved'";
                         }
                         else if(isEmpty)
                         {
-                            selectQuery += " AND status = 'available'"; // Search for available tables  
+                            selectQuery += " AND status = 'available'";
                         }
                         else
                         {
-                            selectQuery += " AND (status = 'available' OR status = 'reserved')"; // Search for all tables
+                            selectQuery += " AND (status = 'available' OR status = 'reserved')";
                         } 
                         
                         using (SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn))
@@ -126,7 +124,7 @@ namespace Restauracja_app
                     
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message); // Display any errors
+                MessageBox.Show("Error: " + ex.Message);
             }
 
             return tables;
@@ -134,8 +132,8 @@ namespace Restauracja_app
 
         private void DisplayResults(List<RestaurantTable> tables)
         {
-            dataGridViewResults.DataSource = null; // Clear existing data
-            dataGridViewResults.DataSource = tables; // Bind the new data
+            dataGridViewResults.DataSource = null;
+            dataGridViewResults.DataSource = tables;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
