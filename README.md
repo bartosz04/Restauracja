@@ -38,9 +38,8 @@ Spis treści
 Instalacja
 - git clone <https://github.com/bartosz04/Restauracja>
 - Wybierz odpowiedni plik do otwarcia projektu w Visual Studio 2022
-- Uruchom plik 
-
-Użycie
+- Uruchom plik
+  
 
 Logowanie: 
 
