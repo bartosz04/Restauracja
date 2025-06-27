@@ -7,13 +7,13 @@ namespace Restauracja_app
         
         private void InitializeComponent()
         {
-            // Set form properties
-            this.ClientSize = new System.Drawing.Size(600, 400); // Makes the form 600 pixels wide and 400 pixels high
-            // Optionally, set minimum size to prevent window from becoming too small
+
+            this.ClientSize = new System.Drawing.Size(600, 400); 
+            
             this.MinimumSize = new System.Drawing.Size(500, 300);
     
-            // Initialize controls
             labelUsername = new Label() { Text = "Użytkownik:", Left = 20, Top = 20, Width = 120 };
+            
             txtUsername = new TextBox() { Left = 150, Top = 20, Width = 200 };
     
             labelPassword = new Label() { Text = "Hasło:", Left = 20, Top = 60, Width = 120 };
@@ -26,7 +26,8 @@ namespace Restauracja_app
             buttonClear = new Button() { Text = "Wyczyść", Left = 140, Top = 150, Width = 110 };
             buttonExit = new Button() { Text = "Wyjdź", Left = 260, Top = 150, Width = 110 };
     
-            // Wire up events
+
+            
             buttonRegister.Click += buttonRegister_Click;
             buttonClear.Click += (s, e) => {
                 txtUsername.Clear();
@@ -35,7 +36,8 @@ namespace Restauracja_app
                 txtUsername.Focus();
             };
             buttonExit.Click += buttonExit_Click;
-            // Add all controls to form
+
+            
             this.Controls.AddRange(new Control[] {
                 labelUsername,
                 txtUsername,
