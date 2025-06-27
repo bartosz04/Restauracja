@@ -103,16 +103,16 @@ namespace Restauracja_app
     {
         private Order currentOrder = new Order();
         private pulpit _parentPulpit;
-        private int _tableNumber; // ✅ dodane pole na numer stolika
+        private int _tableNumber; // dodane pole na numer stolika
 
-        // ✅ zmieniony konstruktor - dodajemy numer stolika
+        // zmieniony konstruktor - dodajemy numer stolika
         public zamowienia(pulpit parentPulpit, int tableNumber)
         {
             _parentPulpit = parentPulpit;
             _tableNumber = tableNumber;
 
             InitializeComponent();
-            this.Text = $"Zamówienia - Stolik {_tableNumber}"; // ✅ ustawienie tytułu okna
+            this.Text = $"Zamówienia - Stolik {_tableNumber}"; // ustawienie tytułu okna
             LoadMenuItems();
             UpdateOrderTotal();
         }
@@ -214,7 +214,7 @@ namespace Restauracja_app
 
             var receiptForm = new Form
             {
-                Text = $"Paragon - Stolik {_tableNumber}", // ✅ numer stolika w nagłówku
+                Text = $"Paragon - Stolik {_tableNumber}", //numer stolika w nagłówku
                 Size = new Size(400, 400),
                 BackColor = Color.White
             };
