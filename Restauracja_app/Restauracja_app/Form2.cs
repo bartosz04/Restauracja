@@ -22,7 +22,6 @@ namespace Restauracja_app
            
             int TtableNumber;
 
-            // Try to parse the input from the tableNumber TextBox
             if (!int.TryParse(tableNumber.Text, out TtableNumber)) 
             {
                 MessageBox.Show("Proszę wprowadzić prawidłowy numer tabeli.");
@@ -32,14 +31,14 @@ namespace Restauracja_app
             string handler = Handler.Text; 
             string status;
 
-            if (radioStatus1.Checked) // If Reserved is selected
+            if (radioStatus1.Checked) 
             {
                 status = "reserved";
             }
-            else if (radioStatus2.Checked) // If Available is selected
+            else if (radioStatus2.Checked)
             {
                 status = "available";
-                handler = string.Empty; // Set handler to an empty string
+                handler = string.Empty;
             }
             else
             {
@@ -81,7 +80,7 @@ namespace Restauracja_app
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message); // Display any errors
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
