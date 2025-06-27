@@ -37,9 +37,8 @@ Spis treści
 
 Instalacja
 - git clone <https://github.com/bartosz04/Restauracja>
-- cd <Restauracja_Biss>
-- dotnet restore
-- dotnet run
+- Wybierz odpowiedni plik do otwarcia projektu w Visual Studio 2022
+- Uruchom plik 
 
 Użycie
 
