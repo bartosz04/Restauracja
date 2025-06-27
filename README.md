@@ -75,24 +75,39 @@ changeButton2_Click() – obsługa zmiany statusu stolika (np. „zarezerwowany�
 
 UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając status i handler w tabeli tables.
 
+
 📦 Klasy:
 
 -Form1  = 	Główne okno aplikacji (wyszukiwanie i zarządzanie stolikami).
 
 -Form2  = 	Formularz do zmiany statusu stolika.
+
 -LoginForm	 = 	Formularz logowania użytkownika.
+
 -RegisterForm	 = 	Formularz rejestracji nowego użytkownika (dla admina).
+
 -pulpit	Możliwe  = 	główne menu (dashboard) aplikacji.
+
 -RestaurantTable	 = 	Model stolika restauracyjnego (numer, status, itd.).
+
 -Order	 = 	Klasa reprezentująca zamówienie.
+
 -OrderItem	 = 	Element zamówienia (np. danie, ilość).
+
 -MenuItem	 = 	Pozycja w menu restauracji.
+
 -Receipt	 = 	Reprezentuje paragon za zamówienie.
+
 -zamowienia	 = 	Prawdopodobnie formularz lub logika związana z zamówieniami.
+
 -PasswordScript	 = 	Obsługa hash/salt lub walidacja hasła (logowanie).
+
 -PasswordScriptR	 = 	Prawdopodobnie analogiczna klasa dla rejestracji.
+
 -RegistrationValidator	 = 	Walidacja danych rejestracyjnych.
+
 -Program  = 	Punkt wejścia aplikacji (Main()).
+
 
 📞 Kontakt
 - reSSBisSupport@gmail.com
