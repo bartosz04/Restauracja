@@ -20,9 +20,7 @@ namespace Restauracja_app
             groupBoxFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).BeginInit();
             SuspendLayout();
-            // 
-            // Label
-            // 
+      
             Label.AutoSize = true;
             Label.Font = new Font("Cambria", 36F, FontStyle.Bold);
             Label.ForeColor = Color.DarkSlateBlue;
@@ -33,9 +31,7 @@ namespace Restauracja_app
             Label.TabIndex = 0;
             Label.Text = "Stoły Restauracji";
             Label.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // groupBoxFilters
-            // 
+
             groupBoxFilters.BackColor = Color.Lavender;
             groupBoxFilters.Controls.Add(checkBoxReserved);
             groupBoxFilters.Controls.Add(checkBoxEmpty);
@@ -50,9 +46,7 @@ namespace Restauracja_app
             groupBoxFilters.TabIndex = 1;
             groupBoxFilters.TabStop = false;
             groupBoxFilters.Text = "Filtry";
-            // 
-            // checkBoxReserved
-            // 
+
             checkBoxReserved.AutoSize = true;
             checkBoxReserved.Location = new Point(14, 30);
             checkBoxReserved.Margin = new Padding(2, 2, 2, 2);
@@ -62,9 +56,7 @@ namespace Restauracja_app
             checkBoxReserved.Text = "Zarezerwowane";
             toolTip1.SetToolTip(checkBoxReserved, "Pokaż tylko zarezerwowane stoły");
             checkBoxReserved.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxEmpty
-            // 
+   
             checkBoxEmpty.AutoSize = true;
             checkBoxEmpty.Location = new Point(14, 60);
             checkBoxEmpty.Margin = new Padding(2, 2, 2, 2);
@@ -74,18 +66,14 @@ namespace Restauracja_app
             checkBoxEmpty.Text = "Wolne";
             toolTip1.SetToolTip(checkBoxEmpty, "Pokaż tylko wolne stoły");
             checkBoxEmpty.UseVisualStyleBackColor = true;
-            // 
-            // textBoxName
-            // 
+
             textBoxName.Location = new Point(112, 105);
             textBoxName.Margin = new Padding(2, 2, 2, 2);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(211, 29);
             textBoxName.TabIndex = 2;
             toolTip1.SetToolTip(textBoxName, "Podaj nazwę przypisaną do stołu");
-            // 
-            // label1
-            // 
+
             label1.AutoSize = true;
             label1.Location = new Point(14, 109);
             label1.Margin = new Padding(2, 0, 2, 0);
@@ -93,9 +81,7 @@ namespace Restauracja_app
             label1.Size = new Size(129, 24);
             label1.TabIndex = 3;
             label1.Text = "Przypisane do";
-            // 
-            // buttonSearch
-            // 
+
             buttonSearch.BackColor = Color.DarkSlateBlue;
             buttonSearch.Font = new Font("Microsoft Sans Serif", 16F);
             buttonSearch.ForeColor = Color.Black;
@@ -109,9 +95,7 @@ namespace Restauracja_app
             buttonSearch.TextAlign = ContentAlignment.MiddleRight;
             toolTip1.SetToolTip(buttonSearch, "Kliknij, aby wyszukać stoły");
             buttonSearch.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewResults
-            // 
+
             dataGridViewResults.BackgroundColor = Color.LavenderBlush;
             dataGridViewResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewResults.Location = new Point(35, 270);
@@ -119,9 +103,7 @@ namespace Restauracja_app
             dataGridViewResults.Name = "dataGridViewResults";
             dataGridViewResults.Size = new Size(770, 262);
             dataGridViewResults.TabIndex = 3;
-            // 
-            // buttonChange
-            // 
+
             buttonChange.BackColor = Color.DarkSlateBlue;
             buttonChange.Font = new Font("Microsoft Sans Serif", 16F);
             buttonChange.ForeColor = Color.Black;
@@ -135,9 +117,7 @@ namespace Restauracja_app
             buttonChange.TextAlign = ContentAlignment.MiddleRight;
             toolTip1.SetToolTip(buttonChange, "Kliknij, aby zmienić status stołu");
             buttonChange.UseVisualStyleBackColor = true;
-            // 
-            // buttonRegister
-            // 
+
             buttonRegister.BackColor = Color.DarkSlateBlue;
             buttonRegister.Font = new Font("Microsoft Sans Serif", 16F);
             buttonRegister.ForeColor = Color.Black;
@@ -151,9 +131,7 @@ namespace Restauracja_app
             buttonRegister.TextAlign = ContentAlignment.MiddleRight;
             toolTip1.SetToolTip(buttonRegister, "Kliknij, aby zarejestrować stół");
             buttonRegister.UseVisualStyleBackColor = true;
-            // 
-            // Form1
-            // 
+
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
