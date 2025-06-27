@@ -34,7 +34,8 @@ namespace Restauracja_app
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            LoginUser(); // Call the login method here
+            LoginUser(); 
+            
             UserType();
         }
 
@@ -156,15 +157,16 @@ namespace Restauracja_app
         {
             byte[] hashBytes = Convert.FromBase64String(storedHash);
 
-            // Extract salt
+            
             byte[] salt = new byte[SaltSize];
             Array.Copy(hashBytes, 0, salt, 0, SaltSize);
 
-            // Hash entered password with extracted salt
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations);
-            byte[] hash = pbkdf2.GetBytes(HashSize);
 
-            // Compare the results byte-by-byte
+            
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations);
+            
+            byte[] hash = pbkdf2.GetBytes(HashSize);
+            
             for (int i = 0; i < HashSize; i++)
             {
                 if (hashBytes[i + SaltSize] != hash[i])
