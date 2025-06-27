@@ -51,6 +51,10 @@ Logowanie:
 
 - Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
 
+Konta:
+- Login: Pracownik; Hasło: Pracownik.
+- Login: Admin123; Hasło: Admin123.
+
 Struktura projektu
 
 -Tutaj bedzie struktura projektu
