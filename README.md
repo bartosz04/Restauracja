@@ -78,7 +78,6 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 📦 Klasy:
 
--Form1  = 	Główne okno aplikacji (wyszukiwanie i zarządzanie stolikami).
 
 -Form2  = 	Formularz do zmiany statusu stolika.
 
