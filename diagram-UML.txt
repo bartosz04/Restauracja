@@ -1,37 +1,5 @@
 
 Program
-  |
-  v
-FormularzLogowania
-  |
-  +---> ObsługaHasłaLog (PasswordScript)
-  |
-  v
-Pulpit
-  +---> FormularzRejestracji (RegisterForm)
-  |        |
-  |        +---> ObsługaHasłaRej (PasswordScriptR)
-  |        |
-  |        +---> WalidacjaRejestracji (RegistrationValidator)
-  |
-  +---> Zamówienia (zamowienia)
-  |        |
-  |        +---> Zamówienie (Order)
-  |                  |
-  |                  +---> PozycjaZamówienia (OrderItem)
-  |                            |
-  |                            +---> PozycjaMenu (MenuItem)
-  |                                      |
-  |                                      +---> Paragon (Receipt)
-  |
-  +---> FormularzStatusu (Form2)
-           |
-           +---> StolikRestauracji (RestaurantTable)
-
-
-
-
-Program
   + Main()
   |
   v
