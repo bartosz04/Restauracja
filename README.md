@@ -67,8 +67,6 @@ buttonChange_Click() – przełącza do formularza Form2.
 
 SearchTables() – metoda wewnętrzna do wyszukiwania stolików w bazie.
 
-DisplayResults() – (nie pokazana jeszcze, ale prawdopodobnie odpowiada za wyświetlanie listy wyników).
-
 Form2() – konstruktor, przypisuje zdarzenia do przycisków.
 
 changeButton2_Click() – obsługa zmiany statusu stolika (np. „zarezerwowany” lub „wolny”).
@@ -85,7 +83,7 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 -RegisterForm	 = 	Formularz rejestracji nowego użytkownika (dla admina).
 
--pulpit	Możliwe  = 	główne menu (dashboard) aplikacji.
+-pulpit  = 	główne menu (dashboard) aplikacji.
 
 -RestaurantTable	 = 	Model stolika restauracyjnego (numer, status, itd.).
 
@@ -97,11 +95,11 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 -Receipt	 = 	Reprezentuje paragon za zamówienie.
 
--zamowienia	 = 	Prawdopodobnie formularz lub logika związana z zamówieniami.
+-zamowienia	 = 	formularz lub logika związana z zamówieniami.
 
 -PasswordScript	 = 	Obsługa hash/salt lub walidacja hasła (logowanie).
 
--PasswordScriptR	 = 	Prawdopodobnie analogiczna klasa dla rejestracji.
+-PasswordScriptR	 = analogiczna klasa dla rejestracji.
 
 -RegistrationValidator	 = 	Walidacja danych rejestracyjnych.
 
