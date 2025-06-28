@@ -1,0 +1,76 @@
+===================================
+  DIAGRAM PRZYPADKÓW UŻYCIA UML  
+===================================
+
+Program
+  |
+  v
+FormularzLogowania
+  |
+  +---> ObsługaHasłaLog (PasswordScript)
+  |
+  v
+Pulpit
+  +---> FormularzRejestracji (RegisterForm)
+  |        |
+  |        +---> ObsługaHasłaRej (PasswordScriptR)
+  |        |
+  |        +---> WalidacjaRejestracji (RegistrationValidator)
+  |
+  +---> Zamówienia (zamowienia)
+  |        |
+  |        +---> Zamówienie (Order)
+  |                  |
+  |                  +---> PozycjaZamówienia (OrderItem)
+  |                            |
+  |                            +---> PozycjaMenu (MenuItem)
+  |                                      |
+  |                                      +---> Paragon (Receipt)
+  |
+  +---> FormularzStatusu (Form2)
+           |
+           +---> StolikRestauracji (RestaurantTable)
+
+
+===================================
+        DIAGRAM KLAS UML          
+===================================
+
+Program
+  + Main()
+  |
+  v
+FormularzLogowania
+  + loguj()
+  |
+  v
+ObsługaHasłaLog (PasswordScript)
+  + haszujHasło()
+  + sprawdźHasło()
+  |
+  v
+Pulpit
+  + wyświetlMenu()
+  + przejdźDo()
+  |
+  +---> FormularzRejestracji (RegisterForm)
+  |        |
+  |        +---> ObsługaHasłaRej (PasswordScriptR)
+  |        |
+  |        +---> WalidacjaRejestracji (RegistrationValidator)
+  |
+  +---> Zamówienia (zamowienia)
+  |        |
+  |        +---> Zamówienie (Order)
+  |                  |
+  |                  +---> PozycjaZamówienia (OrderItem)
+  |                            |
+  |                            +---> PozycjaMenu (MenuItem)
+  |                                      |
+  |                                      +---> Paragon (Receipt)
+  |
+  +---> FormularzStatusu (Form2)
+           |
+           +---> StolikRestauracji (RestaurantTable)
+
+===================================
