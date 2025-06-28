@@ -105,6 +105,74 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 -Program  = 	Punkt wejścia aplikacji (Main()).
 
+Diagram UML:
++-------------------------+
+|        Program           |
++-------------------------+
+| + Main()                 |
++-------------------------+
+          |
+          v
++-------------------------+
+|   FormularzLogowania     |
+|      (LoginForm)         |
++-------------------------+
+| + loguj()                |
++-------------------------+
+          |
+          v
++-------------------------+
+|  ObsługaHasłaLog         |
+|   (PasswordScript)       |
++-------------------------+
+| + haszujHasło()          |
+| + sprawdźHasło()         |
++-------------------------+
+
+          |
+          v
++-------------------------+
+|         Pulpit           |
++-------------------------+
+| + wyświetlMenu()         |
+| + przejdźDo()            |
++-------------------------+
+   |        |        |
+   v        v        v
++------------------+ +----------------+ +------------------+
+| FormularzRejestracji | |  Zamówienia     | | FormularzStatusu |
+|   (RegisterForm)     | |   (zamowienia)  | |      (Form2)     |
++------------------+ +----------------+ +------------------+
+   |                         |                          |
+   v                         v                          v
++---------------------+ +----------------+         +-------------------+
+| ObsługaHasłaRej      | |   Zamówienie   |         | StolikRestauracji  |
+| (PasswordScriptR)    | |    (Order)     |         | (RestaurantTable)  |
++---------------------+ +----------------+         +-------------------+
+   |                         |
+   v                         v
++--------------------------+  +----------------+
+| WalidacjaRejestracji      |  | PozycjaZamówienia |
+| (RegistrationValidator)   |  |   (OrderItem)     |
++--------------------------+  +----------------+
+                                     |
+                                     v
+                              +----------------+
+                              | PozycjaMenu     |
+                              |   (MenuItem)    |
+                              +----------------+
+                                     |
+                                     v
+                              +----------------+
+                              | Paragon        |
+                              |   (Receipt)    |
+                              +----------------+
+
+
+
+
+
+
 
 📞 Kontakt
 - reSSBisSupport@gmail.com
