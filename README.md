@@ -52,7 +52,7 @@ Spis treści
 - Zarządzanie zamówieniami: W sekcji zamówień możesz dodawać nowe zamówienia, edytować istniejące.
 
 👥 Konta:
-- Login: Pracownik; Hasło: Pracownik.
+- Login: Pracownik; Hasło: Pracownik123.
 - Login: Admin123; Hasło: Admin123.
 
 🔐 Metody:
