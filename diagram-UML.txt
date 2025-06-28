@@ -1,6 +1,3 @@
-===================================
-  DIAGRAM PRZYPADKÓW UŻYCIA UML  
-===================================
 
 Program
   |
@@ -32,9 +29,7 @@ Pulpit
            +---> StolikRestauracji (RestaurantTable)
 
 
-===================================
-        DIAGRAM KLAS UML          
-===================================
+
 
 Program
   + Main()
@@ -73,4 +68,3 @@ Pulpit
            |
            +---> StolikRestauracji (RestaurantTable)
 
-===================================
