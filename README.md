@@ -105,6 +105,32 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 -Program  = 	Punkt wejścia aplikacji (Main()).
 
+Paradygamty obiektowe w kodzie: 
+1. Abstrakcja 
+
+Abstrakcja polega na wydzieleniu istotnych cech obiektu, ignorując detale implementacyjne. 
+
+Klasy   MenuItem, OrderItem i Order abstrahują rzeczywiste pojęcia z restauracji (danie, pozycja zamówienia, całe zamówienie). 
+
+Użytkownik klasy Order nie musi wiedzieć, jak dokładnie są przechowywane i liczone pozycje, tylko korzysta z metod takich jak AddItem() czy GetTotal(). 
+
+2. Enkapsulacja (Hermetyzacja) 
+
+Enkapsulacja to ukrywanie wewnętrznych szczegółów działania klasy i udostępnianie tylko odpowiednich metod do interakcji. 
+
+Prywatne pola (np. private List<OrderItem> items w klasie Order) są ukryte przed użytkownikiem klasy. 
+
+Dostęp do nich odbywa się przez publiczne metody i właściwości, np. AddItem(), Clear(), GetTotal(). 
+
+Dzięki temu zmiana wewnętrznej implementacji nie wymusza zmian na zewnątrz. 
+
+3. Dziedziczenie 
+
+Dziedziczenie pozwala tworzyć nowe klasy na podstawie istniejących, rozszerzając lub modyfikując ich zachowanie. 
+
+OrderItem dziedziczy po MenuItem, więc przejmuje właściwości Name i Price. 
+
+Dodatkowo rozszerza je o Quantity oraz metodę LineTotal, która oblicza koszt pozycji zamówienia.
 
 📞 Kontakt
 - reSSBisSupport@gmail.com
