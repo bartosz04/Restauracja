@@ -105,7 +105,11 @@ UpdateTableStatus() – aktualizuje dane w bazie danych (SQLite), zmieniając st
 
 -Program  = 	Punkt wejścia aplikacji (Main()).
 
-Paradygamty obiektowe w kodzie: 
+
+
+Paradygmaty obiektowe w kodzie:
+
+
 1. Abstrakcja 
 
 Abstrakcja polega na wydzieleniu istotnych cech obiektu, ignorując detale implementacyjne. 
