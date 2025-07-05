@@ -149,7 +149,7 @@ Wygląd Aplikacji
 
 - Rozkład stolików
 
-![Zrzut ekranu 2025-07-05 142453](https://github.com/user-attachments/assets/41f4f7ef-4085-498c-b285-df372f24c55e)
+  ![Zrzut ekranu 2025-07-05 142453](https://github.com/user-attachments/assets/41f4f7ef-4085-498c-b285-df372f24c55e)
 
 - Tworzenie zamówienia
 
