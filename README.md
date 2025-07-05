@@ -138,3 +138,12 @@ Dodatkowo rozszerza je o Quantity oraz metodę LineTotal, która oblicza koszt p
 
 📞 Kontakt
 - reSSBisSupport@gmail.com
+
+
+Wygląd Aplikacji 
+
+
+- Logowanie
+  ![Zrzut ekranu 2025-07-05 142418](https://github.com/user-attachments/assets/d0ec55b7-62d6-41d5-b494-a23d39616c4d)
+
+  
