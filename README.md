@@ -147,4 +147,10 @@ Wygląd Aplikacji
   
   ![Zrzut ekranu 2025-07-05 142418](https://github.com/user-attachments/assets/d0ec55b7-62d6-41d5-b494-a23d39616c4d)
 
+- Rozkład stolików
+
+![Zrzut ekranu 2025-07-05 142453](https://github.com/user-attachments/assets/41f4f7ef-4085-498c-b285-df372f24c55e)
+
+
+
   
