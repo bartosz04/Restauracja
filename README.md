@@ -151,6 +151,19 @@ Wygląd Aplikacji
 
 ![Zrzut ekranu 2025-07-05 142453](https://github.com/user-attachments/assets/41f4f7ef-4085-498c-b285-df372f24c55e)
 
+- Tworzenie zamówienia
+
+  ![Zrzut ekranu 2025-07-05 142520](https://github.com/user-attachments/assets/8ec5c254-683f-43a0-bd46-e320a49da3f5)
+
+- Wyświelanie paragonu ze stworzonego paragonu
+
+  ![Zrzut ekranu 2025-07-05 142537](https://github.com/user-attachments/assets/dd286420-3459-4054-afa7-85745e7e758e)
+
+- Przypisanie nowego użytkownika bez roli administratora
+
+  ![Zrzut ekranu 2025-07-05 142617](https://github.com/user-attachments/assets/c504134f-1e18-4e17-8b6c-f8e65d5c94ff)
+
+
 
 
   
